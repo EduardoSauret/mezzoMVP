@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireFunctions } from '@angular/fire/functions';
 
 @Component({
   selector: 'app-feed',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedPage implements OnInit {
 
-  constructor() { }
+  posts
+  sub
+
+  constructor( private aff: AngularFireFunctions) { }
 
   ngOnInit() {
+    const getFeed = this.aff.httpsCallable('getFeed')
+    this.sub = getFeed({}).subscribe(data => {
+      this.posts = data
+    })
+  }
+
+  ngOnDestroy() {
+    this.sub.ubsubscribe()
   }
 
 }

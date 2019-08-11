@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+import { post } from 'selenium-webdriver/http';
 // import * as serviceAccount from './mezzoapp-a1cbd-firebase-adminsdk.json'
 
 // admin.initializeApp({
@@ -7,9 +8,11 @@ import * as admin from 'firebase-admin';
 //   databaseURL: "https://mezzoapp-a1cbd.firebaseio.com"
 // });
 
+// admin.initializeApp()
+
 // var admin = require("firebase-admin");
 
-var serviceAccount = require("../mezzoapp-a1cbd-firebase-adminsdk.json");
+const serviceAccount = require("../mezzoapp-a1cbd-firebase-adminsdk.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -24,7 +27,12 @@ admin.initializeApp({
 
 export const getFeed = functions.https.onCall(async (req,res) => {
     const docs = await admin.firestore().collection('posts').limit(10).get()
-    return docs.docs.map(doc => doc.data())
+    return docs.docs.map(doc => {
+      return {
+        postID: doc.id,
+        ...doc.data()
+      }
+    })
 })
 
 // // Start writing Firebase Functions
