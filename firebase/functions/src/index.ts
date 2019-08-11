@@ -1,16 +1,5 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import { post } from 'selenium-webdriver/http';
-// import * as serviceAccount from './mezzoapp-a1cbd-firebase-adminsdk.json'
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: "https://mezzoapp-a1cbd.firebaseio.com"
-// });
-
-// admin.initializeApp()
-
-// var admin = require("firebase-admin");
 
 const serviceAccount = require("../mezzoapp-a1cbd-firebase-adminsdk.json");
 

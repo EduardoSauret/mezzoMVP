@@ -24,7 +24,6 @@
     "tls": "0.0.1"
   },
   "devDependencies": {
-    "selenium-webdriver": "^4.0.0-alpha.4",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
   },
