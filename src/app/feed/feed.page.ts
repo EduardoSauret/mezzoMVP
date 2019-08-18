@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireFunctions } from '@angular/fire/functions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -11,7 +12,9 @@ export class FeedPage implements OnInit {
   posts
   sub
 
-  constructor( private aff: AngularFireFunctions) { }
+  constructor( 
+    private aff: AngularFireFunctions,
+    private router: Router) { }
 
   ngOnInit() {
     const getFeed = this.aff.httpsCallable('getFeed')
@@ -23,5 +26,9 @@ export class FeedPage implements OnInit {
   ngOnDestroy() {
     this.sub.ubsubscribe()
   }
+
+  goToPost(postID: string) {
+		this.router.navigate(['/tabs/post/' + postID.split('/')[0]])
+	}
 
 }
