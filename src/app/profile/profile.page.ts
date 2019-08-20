@@ -40,16 +40,34 @@ export class ProfilePage implements OnInit {
 	
 	//Log out Firebase 
 	async logout() {
+		const alert = await this.alertController.create({
+			header: "Log out",
+			message: "Are you sure you want to log out?",
+			buttons:[
+				{
+					text: "No",
+					role: "cancel"
+				},
+				{
+					text: "Yes",
+					handler: data => {
+					//Tries to log out from firebase
+					//In case log out fails, an error is displayed
+					//in console
+					try{
+						this.afAuth.auth.signOut();
+						console.log("User was logged out succesfully from firebase!")
+						this.router.navigate(['/login'])
+					}catch(error){
+						console.log("Account fail to Logout from firebase");
+						}
+					}	
+				}
 
-		//Tries to log out from firebase
-		//In case log out fails, an error is displayed
-		//in console
-		try{
-			this.afAuth.auth.signOut();
-		}catch(error){
-			console.log("Account fail to Logout from firebase");
-
-		}
+			]
+		});
+		await alert.present();
+		
 	}
 
 
@@ -76,10 +94,10 @@ export class ProfilePage implements OnInit {
 			  text: 'Delete Account',
 			  handler: data => {
 				  let usernameFireBase = this.afAuth.auth.currentUser.email;
-				  let user = this.afAuth.auth.currentUser;
-
 				  if(usernameFireBase == data.Email){
-					  user.delete;  
+					  this.afAuth.auth.currentUser.delete;
+					  this.router.navigate(['/login'])
+					  console.log("Credentials are correct")
 				  }else{
 					  console.log("Wrong email!")
 				  }
