@@ -9,20 +9,20 @@ import { EditProfilePage } from './edit-profile.page';
 import { ShareModule } from '../share.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: EditProfilePage
-  }
+	{
+		path: '',
+		component: EditProfilePage
+	}
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-	RouterModule.forChild(routes),
-	ShareModule
-  ],
-  declarations: [EditProfilePage]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+		RouterModule.forChild(routes),
+		ShareModule
+	],
+	declarations: [EditProfilePage]
 })
-export class EditProfilePageModule {}
+export class EditProfilePageModule { }

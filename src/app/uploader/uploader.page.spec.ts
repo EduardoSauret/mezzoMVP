@@ -4,24 +4,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UploaderPage } from './uploader.page';
 
 describe('UploaderPage', () => {
-  let component: UploaderPage;
-  let fixture: ComponentFixture<UploaderPage>;
+	let component: UploaderPage;
+	let fixture: ComponentFixture<UploaderPage>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ UploaderPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [UploaderPage],
+			schemas: [CUSTOM_ELEMENTS_SCHEMA],
+		})
+			.compileComponents();
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(UploaderPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(UploaderPage);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
