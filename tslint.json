@@ -58,7 +58,8 @@
     "ordered-imports": false,
     "quotemark": [
       true,
-      "single"
+      "single",
+      "avoid-escape"
     ],
     "trailing-comma": false,
     "no-output-on-prefix": true,
@@ -83,6 +84,7 @@
       "app",
       "page",
       "kebab-case"
-    ]
+    ],
+    "indent": [true, "tabs", 2]
   }
 }

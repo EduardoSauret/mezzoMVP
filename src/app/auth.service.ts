@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core'
-import { Router, CanActivate } from '@angular/router'
-import { UserService } from './user.service'
+import { Injectable } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
+import { UserService } from './user.service';
 
 @Injectable()
 export class AuthService implements CanActivate {
@@ -10,11 +10,11 @@ export class AuthService implements CanActivate {
 	}
 
 	async canActivate(route) {
-		if(await this.user.isAuthenticated()) {
-			return true
+		if (await this.user.isAuthenticated()) {
+			return true;
 		}
 
-		this.router.navigate(['/login'])
-		return false
+		this.router.navigate(['/login']);
+		return false;
 	}
 }

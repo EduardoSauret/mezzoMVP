@@ -6,12 +6,12 @@ import { IonicModule } from '@ionic/angular';
 import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-  ],
-  declarations: [LoadingComponent],
-  exports: [LoadingComponent]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+	],
+	declarations: [LoadingComponent],
+	exports: [LoadingComponent]
 })
-export class ShareModule {}
+export class ShareModule { }
