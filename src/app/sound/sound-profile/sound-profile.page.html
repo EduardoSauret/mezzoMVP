@@ -1,9 +1,67 @@
-<ion-header>
+<!-- <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>sound-profile</ion-title>
+    <ion-title>Super Tabs</ion-title>
   </ion-toolbar>
 </ion-header>
+<super-tabs>
+  <super-tabs-toolbar slot="top">
+    <super-tab-button>
+      <ion-icon name="photo"></ion-icon>
+      <ion-label>Photo</ion-label>    
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Video</ion-label>    
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Audio</ion-label>    
+    </super-tab-button>
+  </super-tabs-toolbar>
+  <super-tabs-container>
+     <super-tab>
+			 <ion-nav [root]="soundProfilePhotoPage" [rootParams]="{ pageName: 'photo' }"></ion-nav>
+			 <ion-nav [root]="soundProfileVideoPage" [rootParams]="{ pageName: 'video' }"></ion-nav>
+			 <ion-nav [root]="soundProfileAudioPage" [rootParams]="{ pageName: 'audio' }"></ion-nav>
+     </super-tab>
+  </super-tabs-container>
+</super-tabs> -->
 
-<ion-content>
-
-</ion-content>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Super Tabs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<super-tabs>
+  <super-tabs-toolbar slot="top">
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Photo</ion-label>    
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Video</ion-label>    
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Audio</ion-label>    
+    </super-tab-button>
+  </super-tabs-toolbar>
+  <super-tabs-container>
+    <super-tab>
+      <ion-content>
+        Page #1
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        Page #2
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        Page #3
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+</super-tabs>

@@ -18,6 +18,7 @@ import { AuthService } from './auth.service';
 import { ShareModule } from './share.module';
 import { AngularFireFunctionsModule, FunctionsRegionToken } from '@angular/fire/functions';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 		HttpModule,
 		ShareModule,
 		AngularFireFunctionsModule,
-		FlexLayoutModule],
+		FlexLayoutModule,
+		SuperTabsModule.forRoot()],
 	providers: [
 		StatusBar,
 		SplashScreen,
