@@ -1,16 +1,19 @@
 <ion-header class="ion-no-border">
-	<ion-toolbar>
+	<ion-toolbar color="primary">
 		<ion-title>Super Tabs</ion-title>
 	</ion-toolbar>
-	<ion-avatar>
-		<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-	</ion-avatar>
-	<div>Hi Ghost</div>
-	<div>Artist</div>
+	<div class="padding">
+		<ion-avatar>
+			<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+		</ion-avatar>
+		<div>Hi Ghost</div>
+		<div>Artist</div>
+		<div>Disfruta el nuevo video oficial</div>
+	</div>
 </ion-header>
 
 <super-tabs>
-	<super-tabs-toolbar  color="secondary">
+	<super-tabs-toolbar color="secondary">
 		<super-tab-button>
 			<ion-icon name="camera"></ion-icon>
 		</super-tab-button>
@@ -24,19 +27,16 @@
 	<super-tabs-container>
 		<super-tab>
 			<ion-content>
-				Page #1
 				<app-photo-list></app-photo-list>
 			</ion-content>
 		</super-tab>
 		<super-tab>
 			<ion-content>
-				Page #2
 				<app-video-list></app-video-list>
 			</ion-content>
 		</super-tab>
 		<super-tab>
 			<ion-content>
-				Page #3
 				<app-audio-list></app-audio-list>
 			</ion-content>
 		</super-tab>
