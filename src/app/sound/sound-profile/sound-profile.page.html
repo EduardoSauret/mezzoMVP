@@ -1,67 +1,44 @@
-<!-- <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Super Tabs</ion-title>
-  </ion-toolbar>
-</ion-header>
-<super-tabs>
-  <super-tabs-toolbar slot="top">
-    <super-tab-button>
-      <ion-icon name="photo"></ion-icon>
-      <ion-label>Photo</ion-label>    
-    </super-tab-button>
-    <super-tab-button>
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Video</ion-label>    
-    </super-tab-button>
-    <super-tab-button>
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Audio</ion-label>    
-    </super-tab-button>
-  </super-tabs-toolbar>
-  <super-tabs-container>
-     <super-tab>
-			 <ion-nav [root]="soundProfilePhotoPage" [rootParams]="{ pageName: 'photo' }"></ion-nav>
-			 <ion-nav [root]="soundProfileVideoPage" [rootParams]="{ pageName: 'video' }"></ion-nav>
-			 <ion-nav [root]="soundProfileAudioPage" [rootParams]="{ pageName: 'audio' }"></ion-nav>
-     </super-tab>
-  </super-tabs-container>
-</super-tabs> -->
-
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Super Tabs</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>Super Tabs</ion-title>
+	</ion-toolbar>
+	<ion-avatar>
+		<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+	</ion-avatar>
+	<div>Hi Ghost</div>
+	<div>Artist</div>
 </ion-header>
+
 <super-tabs>
-  <super-tabs-toolbar slot="top">
-    <super-tab-button>
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Photo</ion-label>    
-    </super-tab-button>
-    <super-tab-button>
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Video</ion-label>    
-    </super-tab-button>
-    <super-tab-button>
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Audio</ion-label>    
-    </super-tab-button>
-  </super-tabs-toolbar>
-  <super-tabs-container>
-    <super-tab>
-      <ion-content>
-        Page #1
-      </ion-content>
-    </super-tab>
-    <super-tab>
-      <ion-content>
-        Page #2
-      </ion-content>
-    </super-tab>
-    <super-tab>
-      <ion-content>
-        Page #3
-      </ion-content>
-    </super-tab>
-  </super-tabs-container>
+	<super-tabs-toolbar  color="secondary">
+		<super-tab-button>
+			<ion-icon name="camera"></ion-icon>
+		</super-tab-button>
+		<super-tab-button>
+			<ion-icon name="videocam"></ion-icon>
+		</super-tab-button>
+		<super-tab-button>
+			<ion-icon name="volume-high"></ion-icon>
+		</super-tab-button>
+	</super-tabs-toolbar>
+	<super-tabs-container>
+		<super-tab>
+			<ion-content>
+				Page #1
+				<app-photo-list></app-photo-list>
+			</ion-content>
+		</super-tab>
+		<super-tab>
+			<ion-content>
+				Page #2
+				<app-video-list></app-video-list>
+			</ion-content>
+		</super-tab>
+		<super-tab>
+			<ion-content>
+				Page #3
+				<app-audio-list></app-audio-list>
+			</ion-content>
+		</super-tab>
+	</super-tabs-container>
 </super-tabs>

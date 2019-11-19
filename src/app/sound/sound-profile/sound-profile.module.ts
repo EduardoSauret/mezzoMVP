@@ -5,10 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
 
-// import { SoundProfileAudioPageModule } from './sound-profile-audio/sound-profile-audio.module';
-// import { SoundProfilePhotoPageModule } from './sound-profile-photo/sound-profile-photo.module';
-// import { SoundProfileVideoPageModule } from './sound-profile-video/sound-profile-video.module';
 import { SoundProfilePage } from './sound-profile.page';
+import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
 	{
@@ -24,9 +22,7 @@ const routes: Routes = [
 		FormsModule,
 		IonicModule,
 		RouterModule.forChild(routes),
-		// SoundProfileAudioPageModule,
-		// SoundProfilePhotoPageModule,
-		// SoundProfileVideoPageModule
+		SharedModule
 	],
 	declarations: [SoundProfilePage]
 })
