@@ -1,9 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>sound-profile</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+	<ion-toolbar color="primary">
+		<ion-title>Super Tabs</ion-title>
+	</ion-toolbar>
+	<div class="padding">
+		<div fxLayout="row">
+			<div fxFlex="25">
+				<ion-avatar>
+					<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+				</ion-avatar>
+			</div>
+			<div fxFlex="25">
+				<div>300</div>
+				<div>posts</div>
+			</div>
+			<div fxFlex="25">
+				<div>1.2M</div>
+				<div>Followers</div>
+			</div>
+			<div fxFlex="25">
+				<div>599</div>
+				<div>Following</div>
+			</div>
+		</div>
+		<div fxLayout="column">
+			<div fxFlex>Hi Ghost</div>
+			<div fxFlex>Artist</div>
+			<div fxFlex>Disfruta el nuevo video oficial</div>
+		</div>
+	</div>
 </ion-header>
 
-<ion-content>
-
-</ion-content>
+<super-tabs>
+	<super-tabs-toolbar color="secondary">
+		<super-tab-button disableRipple="true">
+			<ion-icon name="camera"></ion-icon>
+		</super-tab-button>
+		<super-tab-button disableRipple="true">
+			<ion-icon name="videocam"></ion-icon>
+		</super-tab-button>
+		<super-tab-button disableRipple="true">
+			<ion-icon name="volume-high"></ion-icon>
+		</super-tab-button>
+	</super-tabs-toolbar>
+	<super-tabs-container>
+		<super-tab>
+			<ion-content>
+				<app-photo-list></app-photo-list>
+			</ion-content>
+		</super-tab>
+		<super-tab>
+			<ion-content>
+				<app-video-list></app-video-list>
+			</ion-content>
+		</super-tab>
+		<super-tab>
+			<ion-content>
+				<app-audio-list></app-audio-list>
+			</ion-content>
+		</super-tab>
+	</super-tabs-container>
+</super-tabs>
