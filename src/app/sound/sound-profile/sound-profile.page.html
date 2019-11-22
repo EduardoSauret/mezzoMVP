@@ -3,24 +3,42 @@
 		<ion-title>Super Tabs</ion-title>
 	</ion-toolbar>
 	<div class="padding">
-		<ion-avatar>
-			<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-		</ion-avatar>
-		<div>Hi Ghost</div>
-		<div>Artist</div>
-		<div>Disfruta el nuevo video oficial</div>
+		<div fxLayout="row">
+			<div fxFlex="25">
+				<ion-avatar>
+					<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+				</ion-avatar>
+			</div>
+			<div fxFlex="25">
+				<div>300</div>
+				<div>posts</div>
+			</div>
+			<div fxFlex="25">
+				<div>1.2M</div>
+				<div>Followers</div>
+			</div>
+			<div fxFlex="25">
+				<div>599</div>
+				<div>Following</div>
+			</div>
+		</div>
+		<div fxLayout="column">
+			<div fxFlex>Hi Ghost</div>
+			<div fxFlex>Artist</div>
+			<div fxFlex>Disfruta el nuevo video oficial</div>
+		</div>
 	</div>
 </ion-header>
 
 <super-tabs>
 	<super-tabs-toolbar color="secondary">
-		<super-tab-button>
+		<super-tab-button disableRipple="true">
 			<ion-icon name="camera"></ion-icon>
 		</super-tab-button>
-		<super-tab-button>
+		<super-tab-button disableRipple="true">
 			<ion-icon name="videocam"></ion-icon>
 		</super-tab-button>
-		<super-tab-button>
+		<super-tab-button disableRipple="true">
 			<ion-icon name="volume-high"></ion-icon>
 		</super-tab-button>
 	</super-tabs-toolbar>

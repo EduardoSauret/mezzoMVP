@@ -4,9 +4,15 @@
 }
 
 super-tab-button {  
-  --st-icon-color-inactive: #ccc;
+	--st-icon-color-inactive: #CCCCCC;
+	--st-icon-color-active: #7044ff;
+	// --st-label-color-active: #ffffff;
 }
 
 .padding {
 	padding: 16px;
+}
+
+.md-tab-label ,.md-tab-label-active {
+  min-width: 0; /* same comments as the first solution */
 }
