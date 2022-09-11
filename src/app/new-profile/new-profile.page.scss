@@ -11,21 +11,21 @@ ion-slides {
 		display: block;
     padding: 32px;
     text-align: left;
-    color: white;
+    color: #000000;
   }
 }
 
 ion-select {
   text-align: left;
-  border-bottom: 2px solid white;
-  color: rgba(255, 255, 255, 1) !important;
-	font-size: 22px;
+  border-bottom: 2px solid #000000;
+  color: rgba(0, 0, 0, 1) !important;
+	font-size: 16px;
 	opacity: 1 !important;
 
   .select-text {
-    font-size: 22px;
-		color: rgba(255, 255, 255, 1) !important;
-		opacity: 1 !important;
+    font-size: 16px;
+		// color: rgba(255, 255, 255, 1) !important;
+		// opacity: 1 !important;
 
 		.select-placeholder {
 			opacity: 1 !important;
@@ -38,25 +38,32 @@ ion-select {
 }
 
 .slide1 {
-  background: var(--ion-color-primary);
+	background-image: url("../../assets/images/bg_audio.png");
+	background-size: cover;
 }
 
 .slide2 {
-  background: var(--ion-color-secondary);
+	background-image: url("../../assets/images/bg_video.png");
+	background-size: cover;
 }
 
 .slide3 {
-  background: var(--ion-color-tertiary);
+	background-image: url("../../assets/images/bg_model.png");
+	background-size: cover;
 }
 
-h3 {
+h2 {
 	margin-top: 0;
 	margin-bottom: 16px;
 }
 
+h5 {
+	color: #fff;
+	text-align: center;
+}
+
 p {
   text-align: left;
-  font-size: 16px;
 }
 
 // Ionic Button 

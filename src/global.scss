@@ -12,6 +12,7 @@
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 
+
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
@@ -24,6 +25,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import "./styles/_mezzo-utilities.scss";
+@import "./styles/_mezzo-typography.scss";
+@import "./styles/_mezzo-colors.scss";
 
 
 /* Global CSS styles */
@@ -33,24 +39,6 @@
 // Typography for titles subtitles paragraphs labels and everything else
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 62px;
-  font-weight: 500;
-}
-
-h3 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 30px;
-}
-
-h5 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 300;
-  text-align: center;
-}
 
 ::-webkit-scrollbar,
 *::-webkit-scrollbar {
@@ -58,10 +46,10 @@ h5 {
   overflow: hidden;
 }
 
-ion-content {
-  overflow: hidden;
-  --overflow: hidden;
-}
+// ion-content {
+//   overflow: hidden;
+//   --overflow: hidden;
+// }
 
 .scroll-content {
   overflow: hidden;
@@ -70,4 +58,9 @@ ion-content {
 ion-infinite-scroll.md.infinite-scroll-enabled.hydrated {
   overflow: scroll !important;
   height: 100% !important;
+}
+
+:host(.tab-selected) {
+	// color: var(--color-selected);
+	color: #611FED !important;
 }

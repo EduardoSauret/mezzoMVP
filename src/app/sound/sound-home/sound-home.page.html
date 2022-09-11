@@ -1,9 +1,59 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>sound-home</ion-title>
+  <ion-toolbar class="border-bottom">
+		<div fxLayout="row" fxLayoutAlign="space-between center" class="pad-h-16">
+			<ion-icon name="menu" size="large" class="mezzo-indigo"></ion-icon>
+			<span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">Sound</span>
+			<ion-icon name="funnel" size="large" class="mar-r-20 mezzo-indigo"></ion-icon>
+			<ion-icon name="search" size="large" class="mezzo-indigo"></ion-icon>
+		</div>
   </ion-toolbar>
-</ion-header>
-
+	<div class="section-overflow border-bottom">
+		<div class="overflow-content">
+			<mat-chip-list aria-label="Fish selection">
+				<div fxLayout="row" fxLayoutGap="10px">
+					<mat-chip class="mezzo-green-light-bg mezzo-indigo">Guitarist <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
+					<mat-chip class="mezzo-red-light-bg mezzo-indigo">Bassist <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
+					<mat-chip class="mezzo-purple-light-bg mezzo-indigo">Drummer <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
+					<mat-chip class="mezzo-green-light-bg mezzo-indigo">Singer <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
+					<mat-chip class="mezzo-red-light-bg mezzo-indigo">Pianist <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
+					<mat-chip class="mezzo-purple-light-bg mezzo-indigo">Producer <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
+				</div>
+				</mat-chip-list>
+		</div>
+	</div>
 <ion-content>
-
+	<div fxLayout="row" class="pad-16">
+		<div fxFlex="noshrink" class="mar-r-10">
+			<ion-avatar>
+				<!-- <img src="/src/assets/images/avatar.png"> -->
+				<img src="../../assets/images/avatar.png">
+			</ion-avatar>
+		</div>
+		<div fxFlex="grow" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="6px">
+			<b>Adan Cruz</b>
+			<h5 class="mezzo-gray-text">Cantante a - 18km de ti</h5>
+		</div>
+		<div fxFlex fxLayoutAlign="end center">
+			<ion-icon name="more" size="large" class="mezzo-gray-text"></ion-icon>
+		</div>
+	</div>
+	<img fxFlex="grow" src="../../assets/images/thumbnail.png">
+	<div fxLayout="column" class="pad-16" fxLayoutGap="6px">
+		<h3>M.V.P. JOZUE X Tony Dow X Tocadiscos Trez</h3>
+		<h5 class="mezzo-gray-text">Publicado hace 4 horas - 4k reproducciones</h5>
+		<h4>M.V.P primer single de SlowMotion EP por parte de ROCKES BEAT Y JOZUE</h4>
+		<div fxFlex fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+			<div fxFlex="nogrow" fxLayout="row" fxLayoutGap="10px"> 
+				<ion-icon name="heart-empty" size="small" class="mezzo-gray-text"></ion-icon>
+				<h5 fxLayoutAlign="start center" class="mezzo-gray-text">247</h5>
+			</div>
+			<div fxFlex="nogrow" fxLayout="row" fxLayoutGap="10px">
+				<ion-icon name="text" size="small" class="mezzo-gray-text"></ion-icon>
+				<h5 fxLayoutAlign="start center" class="mezzo-gray-text">57</h5>
+			</div>
+			<div fxFlex="nogrow" fxLayout="row" fxLayoutGap="10px">
+				<ion-icon name="paper-plane" size="small" class="mezzo-gray-text"></ion-icon>
+				<h5 fxLayoutAlign="start center" class="mezzo-gray-text">33</h5>
+			</div>
+		</div>
+	</div>
 </ion-content>

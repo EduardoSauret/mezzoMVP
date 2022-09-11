@@ -10,6 +10,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class NewProfilePage implements OnInit {
 
+	shouldScroll;
+
 	slideOpts = {
 		initialSlide: 0,
 		speed: 400

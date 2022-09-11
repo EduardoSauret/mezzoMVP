@@ -1,0 +1,27 @@
+@import "./variables/_mezzo-color-variables.scss";
+
+// Text
+.mezzo-indigo {
+	color: $mezzo-indigo !important;
+}
+
+.mezzo-gray-border {
+	color: $mezzo-gray-border;
+}
+
+.mezzo-gray-text {
+	color: $mezzo-gray-text;
+}
+
+// Background
+.mezzo-green-light-bg {
+	background-color: $mezzo-green-light !important;
+}
+
+.mezzo-red-light-bg {
+	background-color: $mezzo-red-light !important;
+}
+
+.mezzo-purple-light-bg {
+	background-color: $mezzo-purple-light !important;
+}

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { SoundProfilePage } from './sound-profile.page';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -21,7 +21,8 @@ const routes: Routes = [
 		FormsModule,
 		IonicModule,
 		RouterModule.forChild(routes),
-		SharedModule
+		SharedModule,
+		FlexLayoutModule
 	],
 	declarations: [SoundProfilePage]
 })
