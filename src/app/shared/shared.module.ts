@@ -9,12 +9,14 @@ import {MatChipsModule} from '@angular/material/chips';
 import { AudioListComponent } from './audio-list/audio-list.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { VideoListComponent } from './video-list/video-list.component';
+import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
 
 @NgModule({
 	declarations: [
 		AudioListComponent,
 		PhotoListComponent,
-		VideoListComponent
+		VideoListComponent,
+		HeaderToolbarComponent
 	],
 	imports: [
 		CommonModule,
@@ -29,7 +31,8 @@ import { VideoListComponent } from './video-list/video-list.component';
 		VideoListComponent,
 		FlexLayoutModule,
 		SuperTabsModule,
-		MatChipsModule
+		MatChipsModule,
+		HeaderToolbarComponent
 	]
 })
 export class SharedModule { }

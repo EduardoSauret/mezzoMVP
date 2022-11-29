@@ -3,11 +3,11 @@
 	background-image: none !important;
 }
 
-// super-tab-button {  
-// 	// --st-icon-color-inactive: #CCCCCC;
-// 	// --st-icon-color-active: #7044ff;
-// 	// --st-label-color-active: #ffffff;
-// }
+super-tab-button {  
+	--st-icon-color-inactive: #888888;
+	--st-icon-color-active: #7044ff;
+	--st-label-color-active: #7044ff;
+}
 
 .padding {
 	padding: 16px;
@@ -15,4 +15,18 @@
 
 .md-tab-label ,.md-tab-label-active {
   min-width: 0; /* same comments as the first solution */
+}
+
+ion-avatar {
+	width: 100px;
+	height: 100px;
+}
+
+super-tabs-toolbar {
+	background-color: #ffffff;
+	border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+super-tabs-toolbar.hydrated.ion-color-primary::after {
+	background-image: none;
 }
