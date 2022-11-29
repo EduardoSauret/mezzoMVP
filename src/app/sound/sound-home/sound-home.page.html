@@ -1,25 +1,4 @@
-  <ion-toolbar class="border-bottom">
-		<div fxLayout="row" fxLayoutAlign="space-between center" class="pad-h-16">
-			<ion-icon name="menu" size="large" class="mezzo-indigo"></ion-icon>
-			<span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">Sound</span>
-			<ion-icon name="funnel" size="large" class="mar-r-20 mezzo-indigo"></ion-icon>
-			<ion-icon name="search" size="large" class="mezzo-indigo"></ion-icon>
-		</div>
-  </ion-toolbar>
-	<div class="section-overflow border-bottom">
-		<div class="overflow-content">
-			<mat-chip-list aria-label="Fish selection">
-				<div fxLayout="row" fxLayoutGap="10px">
-					<mat-chip class="mezzo-green-light-bg mezzo-indigo">Guitarist <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
-					<mat-chip class="mezzo-red-light-bg mezzo-indigo">Bassist <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
-					<mat-chip class="mezzo-purple-light-bg mezzo-indigo">Drummer <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
-					<mat-chip class="mezzo-green-light-bg mezzo-indigo">Singer <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
-					<mat-chip class="mezzo-red-light-bg mezzo-indigo">Pianist <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
-					<mat-chip class="mezzo-purple-light-bg mezzo-indigo">Producer <ion-icon name="close" size="small" class="mar-l-4"></ion-icon></mat-chip>
-				</div>
-				</mat-chip-list>
-		</div>
-	</div>
+<mezzo-header-toolbar [headerTitle]="'Sound'" [pageType]="'home'"></mezzo-header-toolbar>
 <ion-content>
 	<div fxLayout="row" class="pad-16">
 		<div fxFlex="noshrink" class="mar-r-10">
