@@ -20,25 +20,27 @@ export class LoginPage implements OnInit {
 	}
 
 	async login() {
-		const { username, password } = this;
-		try {
-			// kind of a hack.
-			const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '@luxilab.com', password);
+		console.log('login clicked');
+		this.router.navigate(['/sound/home']);
+		// const { username, password } = this;
+		// try {
+		// 	// kind of a hack.
+		// 	const res = await this.afAuth.auth.signInWithEmailAndPassword(username + '@luxilab.com', password);
 
-			if (res.user) {
-				this.user.setUser({
-					username,
-					uid: res.user.uid
-				});
-				this.router.navigate(['/tabs/home']);
-			}
+		// 	if (res.user) {
+		// 		this.user.setUser({
+		// 			username,
+		// 			uid: res.user.uid
+		// 		});
+		// 		this.router.navigate(['/tabs/home']);
+		// 	}
 
-		} catch (err) {
-			console.dir(err);
-			if (err.code === 'auth/user-not-found') {
-				console.log('"User not found');
-			}
-		}
+		// } catch (err) {
+		// 	console.dir(err);
+		// 	if (err.code === 'auth/user-not-found') {
+		// 		console.log('"User not found');
+		// 	}
+		// }
 	}
 
 }

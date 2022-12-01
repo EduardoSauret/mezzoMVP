@@ -4,6 +4,12 @@ body {
 	color: #333333;
 }
 
+.logo {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 54px;
+	font-weight: 700;
+}
+
 h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 62px;
@@ -24,7 +30,7 @@ h3 {
 	margin: 0;
 }
 
-h4 {
+h4, .h4 {
 	font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -43,6 +49,5 @@ p {
 }
 
 b, .bold {
-	font-size: 16px;
 	font-weight: 500;
 }

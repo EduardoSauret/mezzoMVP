@@ -1,0 +1,21 @@
+.height {
+	height: 100vh;
+}
+
+.logo {
+	text-align: center;
+	width: 100%;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.background {
+	background-image: url("../../assets/images/bg_login.png") !important;
+	background-size: cover;
+	height: 100%;
+	padding: 22px;
+}
+
+.border-bottom {
+	border-bottom: 1px solid rgba(0,0,0);
+}

@@ -1,23 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
-	<ion-list>
-
-		<ion-item>
-		  <ion-label position="floating">Username</ion-label>
-		  <ion-input type="text" [(ngModel)]="username"></ion-input>
-		</ion-item>
-	  
-		<ion-item>
-		  <ion-label position="floating">Password</ion-label>
-		  <ion-input type="password" [(ngModel)]="password"></ion-input>
-		</ion-item>
-	  
-	  </ion-list>
-
-	  <ion-button fill="solid" expand="block" color="dark" (click)="login()">Login</ion-button>
+<ion-content>
+	<div fxLayout="column" class="background padding height">
+		<div class="logo">Mezzo</div>
+	
+		<div fxLayout="column" class="pad-b-30">
+			<mat-form-field fxFlex>
+				<input matInput placeholder="Username" type="text" [(ngModel)]="username">
+			</mat-form-field>
+			<mat-form-field fxFlex>
+				<input matInput placeholder="Password" type="password" [(ngModel)]="password">
+			</mat-form-field>
+		</div>
+		<div fxFlex >
+			<ion-button fill="solid" expand="block" color="dark" shape="round" (click)="login()">Login</ion-button>
+		</div>
+	</div>
 </ion-content>
