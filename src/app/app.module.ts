@@ -19,6 +19,10 @@ import { ShareModule } from './share.module';
 import { AngularFireFunctionsModule, FunctionsRegionToken } from '@angular/fire/functions';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular';
 		ShareModule,
 		AngularFireFunctionsModule,
 		FlexLayoutModule,
-		SuperTabsModule.forRoot()],
+		SuperTabsModule.forRoot(),
+		BrowserAnimationsModule,
+		MatInputModule,
+		MatFormFieldModule
+	],
 	providers: [
 		StatusBar,
 		SplashScreen,

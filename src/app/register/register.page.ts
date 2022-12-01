@@ -39,25 +39,30 @@ export class RegisterPage implements OnInit {
 	}
 
 	async register() {
-		const { username, password, cpassword } = this;
-		if (password !== cpassword) {
-			return console.error("Passwords don't match");
-			this.presentAlert('test', 'test');
-		}
-		try {
-			const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + '@luxilab.com', password);
-			this.afstore.doc(`users/${res.user.uid}`).set({
-				username
-			});
-			this.user.setUser({
-				username,
-				uid: res.user.uid
-			});
-			// this.presentAlert('Success', 'You are registered!');
-			this.router.navigate(['/new-profile']);
-		} catch (error) {
-			console.dir(error);
-		}
+		this.router.navigate(['/new-profile']);
+		// const { username, password, cpassword } = this;
+		// if (password !== cpassword) {
+		// 	return console.error("Passwords don't match");
+		// 	this.presentAlert('test', 'test');
+		// }
+		// try {
+		// 	const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + '@luxilab.com', password);
+		// 	this.afstore.doc(`users/${res.user.uid}`).set({
+		// 		username
+		// 	});
+		// 	this.user.setUser({
+		// 		username,
+		// 		uid: res.user.uid
+		// 	});
+		// 	// this.presentAlert('Success', 'You are registered!');
+		// 	this.router.navigate(['/new-profile']);
+		// } catch (error) {
+		// 	console.dir(error);
+		// }
+	}
+
+	public login() {
+		this.router.navigate(['/login']);
 	}
 
 }

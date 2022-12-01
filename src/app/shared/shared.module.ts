@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SuperTabsModule } from '@ionic-super-tabs/angular';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 // Custom Ionic components
 import { AudioListComponent } from './audio-list/audio-list.component';
@@ -23,7 +27,11 @@ import { HeaderToolbarComponent } from './components/header-toolbar/header-toolb
 		IonicModule,
 		FlexLayoutModule,
 		SuperTabsModule,
-		MatChipsModule
+		MatChipsModule,
+		MatInputModule,
+		MatFormFieldModule,
+		FormsModule,
+		ReactiveFormsModule
 	],
 	exports: [
 		AudioListComponent,
@@ -32,7 +40,11 @@ import { HeaderToolbarComponent } from './components/header-toolbar/header-toolb
 		FlexLayoutModule,
 		SuperTabsModule,
 		MatChipsModule,
-		HeaderToolbarComponent
+		HeaderToolbarComponent,
+		MatInputModule,
+		MatFormFieldModule,
+		FormsModule,
+		ReactiveFormsModule
 	]
 })
 export class SharedModule { }

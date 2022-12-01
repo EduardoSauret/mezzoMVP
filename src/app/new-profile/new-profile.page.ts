@@ -36,37 +36,37 @@ export class NewProfilePage implements OnInit {
 	}
 
 	saveSoundProfile() {
-		console.log(this.selectedMusicProfile);
-		const selectedMusicProfile = this.selectedMusicProfile;
+		// console.log(this.selectedMusicProfile);
+		// const selectedMusicProfile = this.selectedMusicProfile;
 
-		this.afstore.doc(`users/${this.user.getUID()}`).update({
-			branch: 'sound',
-			profile: selectedMusicProfile
-		});
+		// this.afstore.doc(`users/${this.user.getUID()}`).update({
+		// 	branch: 'sound',
+		// 	profile: selectedMusicProfile
+		// });
 
 		this.router.navigate(['/sound']);
 	}
 
 	saveVisualProfile() {
-		console.log(this.selectedVisualProfile);
-		const selectedVisualProfile = this.selectedVisualProfile;
+		// console.log(this.selectedVisualProfile);
+		// const selectedVisualProfile = this.selectedVisualProfile;
 
-		this.afstore.doc(`users/${this.user.getUID()}`).update({
-			branch: 'visual',
-			profile: selectedVisualProfile
-		});
+		// this.afstore.doc(`users/${this.user.getUID()}`).update({
+		// 	branch: 'visual',
+		// 	profile: selectedVisualProfile
+		// });
 
 		this.router.navigate(['/visual']);
 	}
 
 	savePerformanceProfile() {
-		console.log(this.selectedPerformanceProfile);
-		const selectedPerformanceProfile = this.selectedPerformanceProfile;
+		// console.log(this.selectedPerformanceProfile);
+		// const selectedPerformanceProfile = this.selectedPerformanceProfile;
 
-		this.afstore.doc(`users/${this.user.getUID()}`).update({
-			branch: 'performance',
-			profile: selectedPerformanceProfile
-		});
+		// this.afstore.doc(`users/${this.user.getUID()}`).update({
+		// 	branch: 'performance',
+		// 	profile: selectedPerformanceProfile
+		// });
 
 		this.router.navigate(['/performance']);
 	}

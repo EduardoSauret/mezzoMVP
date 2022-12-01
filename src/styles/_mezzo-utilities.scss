@@ -6,11 +6,11 @@ img {
 
 // Borders
 .border-top {
-	border-top: 1px solid $mezzo-gray-border;;
+	border-top: 1px solid $mezzo-gray-border;
 }
 
 .border-bottom {
-	border-bottom: 1px solid $mezzo-gray-border;;
+	border-bottom: 1px solid $mezzo-gray-border;
 }
 
 // Paddings
@@ -24,6 +24,18 @@ img {
 
 .pad-b-10 {
 	padding-bottom: 10px;
+}
+
+.pad-b-20 {
+	padding-bottom: 20px;
+}
+
+.pad-b-30 {
+	padding-bottom: 30px;
+}
+
+.pad-t-20 {
+	padding-top: 20px
 }
 
 .pad-h-16 {
@@ -66,4 +78,8 @@ img {
 	font-size: 20px;
 	font-family: 'Poppins', sans-serif;
 	color: #611FED;
+}
+
+.cursor-pointer {
+	cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SoundConstants } from './sound-home.constants';
 
 @Component({
 	selector: 'app-sound-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./sound-home.page.scss'],
 })
 export class SoundHomePage implements OnInit {
+
 
 	constructor() { }
 
