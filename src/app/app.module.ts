@@ -22,6 +22,7 @@ import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { CommonModule } from '@angular/common';
 
 
 
@@ -29,6 +30,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 	declarations: [AppComponent],
 	entryComponents: [],
 	imports: [
+		CommonModule,
 		BrowserModule,
 		IonicModule.forRoot(),
 		AppRoutingModule,
