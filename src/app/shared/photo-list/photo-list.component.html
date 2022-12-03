@@ -1,3 +1,5 @@
-<p>
-  photo-list works!
-</p>
+<div class="grid">
+	<ng-container *ngFor="let photo of photos">
+		<div [ngStyle]="{'background-image': 'url(' + photo.src + ')'}"></div>
+	</ng-container>
+</div>
