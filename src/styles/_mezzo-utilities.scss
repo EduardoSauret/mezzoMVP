@@ -1,85 +1,85 @@
 @import "./variables/_mezzo-color-variables.scss";
 
 img {
-	width: 100%;
+    width: 100%;
 }
 
 // Borders
 .border-top {
-	border-top: 1px solid $mezzo-gray-border;
+    border-top: 1px solid $mezzo-gray-border;
 }
 
 .border-bottom {
-	border-bottom: 1px solid $mezzo-gray-border;
+    border-bottom: 1px solid $mezzo-gray-border;
 }
 
 // Paddings
 .pad-10 {
-	padding: 10px;
+    padding: 10px;
 }
 
 .pad-t-10 {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 .pad-b-10 {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .pad-b-20 {
-	padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .pad-b-30 {
-	padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .pad-t-20 {
-	padding-top: 20px
+    padding-top: 20px
 }
 
 .pad-h-16 {
-	padding-left: 16px;
-	padding-right: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .pad-v-16 {
-	padding-top: 16px;
-	padding-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .pad-16 {
-	padding: 1rem;
+    padding: 1rem;
 }
 
 .mar-t-10 {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .mar-r-10 {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 
 .mar-r-20 {
-	margin-right: 20px;
+    margin-right: 20px;
 }
 
 .mar-l-4 {
-	margin-left: 4px;
+    margin-left: 4px;
 }
 
 // Color 
 .mezzo-indigo {
-	color: $mezzo-indigo;
+    color: $mezzo-indigo;
 }
 
 // Reusable styles
 .mezzo-toolbar-title {
-	font-size: 20px;
-	font-family: 'Poppins', sans-serif;
-	color: #611FED;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #611FED;
 }
 
 .cursor-pointer {
-	cursor: pointer;
+    cursor: pointer;
 }

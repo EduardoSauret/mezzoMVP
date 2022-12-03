@@ -14,13 +14,15 @@ import { AudioListComponent } from './audio-list/audio-list.component';
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
+import { PostComponent } from './components/post/post.component'
 
 @NgModule({
 	declarations: [
 		AudioListComponent,
 		PhotoListComponent,
 		VideoListComponent,
-		HeaderToolbarComponent
+		HeaderToolbarComponent,
+		PostComponent
 	],
 	imports: [
 		CommonModule,
@@ -31,9 +33,10 @@ import { HeaderToolbarComponent } from './components/header-toolbar/header-toolb
 		MatInputModule,
 		MatFormFieldModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
 	],
 	exports: [
+		CommonModule,
 		AudioListComponent,
 		PhotoListComponent,
 		VideoListComponent,
@@ -44,7 +47,8 @@ import { HeaderToolbarComponent } from './components/header-toolbar/header-toolb
 		MatInputModule,
 		MatFormFieldModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		PostComponent
 	]
 })
 export class SharedModule { }

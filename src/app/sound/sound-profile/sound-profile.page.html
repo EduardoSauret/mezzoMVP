@@ -4,7 +4,7 @@
 		<div fxLayout="row" fxLayoutGap="1rem">
 			<div fxFlex="100px">
 				<ion-avatar>
-					<img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+					<img src="../../../assets/images/avatar-highost.png">
 				</ion-avatar>
 			</div>
 			<div fxFlex="25" fxLayout="column"  fxLayoutAlign="center center">
@@ -43,7 +43,7 @@
 	<super-tabs-container>
 		<super-tab>
 			<ion-content>
-				<app-photo-list></app-photo-list>
+				<app-photo-list [photos]="photos"></app-photo-list>
 			</ion-content>
 		</super-tab>
 		<super-tab>

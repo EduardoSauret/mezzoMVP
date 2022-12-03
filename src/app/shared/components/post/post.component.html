@@ -1,0 +1,36 @@
+<div fxLayout="row" class="pad-16">
+	<div fxFlex="noshrink" class="mar-r-10">
+		<ion-avatar>
+			<img [src]="avatar">
+		</ion-avatar>
+	</div>
+	<div fxFlex="grow" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="6px">
+		<b>{{name}}</b>
+		<h5 class="mezzo-gray-text">{{profile}} a - {{distance}} de ti</h5>
+	</div>
+	<div fxFlex fxLayoutAlign="end center">
+		<ion-icon name="more" size="large" class="mezzo-gray-text"></ion-icon>
+	</div>
+</div>
+<div fxLayout="row">
+  <img fxFlex="grow" [src]="thumbnail">
+</div>
+<div fxLayout="column" class="pad-16" fxLayoutGap="6px">
+	<h3>{{title}}</h3>
+	<h5 class="mezzo-gray-text">Publicado hace 4 horas - 4k reproducciones</h5>
+	<h4>{{description}}</h4>
+	<div fxFlex fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+		<div fxFlex="nogrow" fxLayout="row" fxLayoutGap="10px"> 
+			<ion-icon name="heart-empty" size="small" class="mezzo-gray-text"></ion-icon>
+			<h5 fxLayoutAlign="start center" class="mezzo-gray-text">247</h5>
+		</div>
+		<div fxFlex="nogrow" fxLayout="row" fxLayoutGap="10px">
+			<ion-icon name="text" size="small" class="mezzo-gray-text"></ion-icon>
+			<h5 fxLayoutAlign="start center" class="mezzo-gray-text">57</h5>
+		</div>
+		<div fxFlex="nogrow" fxLayout="row" fxLayoutGap="10px">
+			<ion-icon name="paper-plane" size="small" class="mezzo-gray-text"></ion-icon>
+			<h5 fxLayoutAlign="start center" class="mezzo-gray-text">33</h5>
+		</div>
+	</div>
+</div>

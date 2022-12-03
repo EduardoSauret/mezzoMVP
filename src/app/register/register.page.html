@@ -1,61 +1,33 @@
-<!-- <ion-header>
-	<ion-toolbar>
-	  <ion-title>Register</ion-title>
-	</ion-toolbar>
-  </ion-header>
-  
-  <ion-content padding>
-	  <ion-list>
-  
-		  <ion-item>
-			<ion-label position="floating">Username</ion-label>
-			<ion-input type="text" [(ngModel)]="username"></ion-input>
-		  </ion-item>
-		
-		  <ion-item>
-			<ion-label position="floating">Password</ion-label>
-			<ion-input type="password" [(ngModel)]="password"></ion-input>
-		  </ion-item>
+<ion-content>
+  <div fxLayout="column" class="background padding height">
+    <div class="logo">Mezzo</div>
 
-		  <ion-item>
-			<ion-label position="floating">Confirm Password</ion-label>
-			<ion-input type="password" [(ngModel)]="cpassword"></ion-input>
-		  </ion-item>
-		
-		</ion-list>
-  
-		<ion-button fill="solid" expand="block" color="dark" (click)="register()">Signup</ion-button>
-  </ion-content> -->
-
-	<ion-content>
-		<div fxLayout="column" class="background padding height">
-			<div class="logo">Mezzo</div>
-		
-			<div fxLayout="column" class="pad-b-30">
-				<mat-form-field fxFlex>
-					<input matInput placeholder="Username" type="text" [(ngModel)]="username">
-				</mat-form-field>
-				<mat-form-field fxFlex>
-					<input matInput placeholder="Password" type="password" [(ngModel)]="password">
-				</mat-form-field>
-				<mat-form-field fxFlex>
-					<input matInput placeholder="Confirm Password" type="password" [(ngModel)]="cpassword">
-				</mat-form-field>
-			</div>
-			<div fxLayout="column">
-				<ion-button fill="solid" expand="block" color="dark" shape="round" (click)="register()">Register</ion-button>
-			</div>
-			<div fxFlex="grow" fxLayout="column" fxLayoutAlign="center center">
-				<h4 class="pad-b-20 border-bottom">Already have an account? <span class="h4 bold cursor-pointer" (click)="login()">Login</span></h4>
-				<h4 class="pad-t-20 pad-b-20">Connect with your social media</h4>
-				<div fxLayout="row" fxLayoutGap="30px" >
-					<div fxFlex="30px">
-						<img src="../../assets/images/facebook-logo.png" />
-					</div>
-					<div fxFlex="40px">
-						<img src="../../assets/images/google-logo.png" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</ion-content>
+    <div fxLayout="column" class="pad-b-30">
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Username" type="text" [(ngModel)]="username">
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Password" type="password" [(ngModel)]="password">
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Confirm Password" type="password" [(ngModel)]="cpassword">
+      </mat-form-field>
+    </div>
+    <div fxLayout="column">
+      <ion-button fill="solid" expand="block" color="dark" shape="round" (click)="register()">Register</ion-button>
+    </div>
+    <div fxFlex="grow" fxLayout="column" fxLayoutAlign="center center">
+      <h4 class="pad-b-20 border-bottom">Already have an account? <span class="h4 bold cursor-pointer"
+          (click)="login()">Login</span></h4>
+      <h4 class="pad-t-20 pad-b-20">Connect with your social media</h4>
+      <div fxLayout="row" fxLayoutGap="30px">
+        <div fxFlex="30px">
+          <img src="../../assets/images/facebook-logo.png" />
+        </div>
+        <div fxFlex="40px">
+          <img src="../../assets/images/google-logo.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
