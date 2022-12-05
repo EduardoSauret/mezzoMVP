@@ -8,11 +8,17 @@ import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 export class SoundProfilePage implements AfterViewInit {
 
   photos: any[];
+  videos: any[];
+  audios: any[];
 
   constructor(
     // private popoverCtrl: PopoverController
   ) {
     this.photos = [];
+    this.videos = [];
+    this.audios = [];
+
+    // Photos
     this.photos.push({
       src: '../../assets/images/profile/profile-01.jpg',
     });
@@ -30,6 +36,31 @@ export class SoundProfilePage implements AfterViewInit {
     });
     this.photos.push({
       src: '../../assets/images/profile/profile-06.jpg',
+    });
+    this.photos.push({
+      src: '../../assets/images/profile/profile-07.jpg',
+    });
+    this.photos.push({
+      src: '../../assets/images/profile/profile-08.jpg',
+    });
+    // Videos grid
+    this.videos.push({
+      src: '../../assets/images/profile/profile-09.jpg',
+    });
+    this.videos.push({
+      src: '../../assets/images/profile/profile-10.jpg',
+    });
+    this.videos.push({
+      src: '../../assets/images/profile/profile-11.jpg',
+    });
+    this.videos.push({
+      src: '../../assets/images/profile/profile-12.jpg',
+    });
+    this.videos.push({
+      src: '../../assets/images/profile/profile-13.jpg',
+    });
+    this.videos.push({
+      src: '../../assets/images/profile/profile-14.jpg',
     });
   }
 
