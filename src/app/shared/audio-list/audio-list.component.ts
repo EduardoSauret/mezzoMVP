@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'mezzo-audio-list',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./audio-list.component.scss'],
 })
 export class AudioListComponent implements OnInit {
+
+	@Input() audioThumbnails: any[];
 
 	constructor() { }
 
