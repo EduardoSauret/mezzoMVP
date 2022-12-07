@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AudioListComponent implements OnInit {
 
-	@Input() audioThumbnails: any[];
+	@Input() audios: any[];
 
 	constructor() { }
 

@@ -9,14 +9,14 @@ export class SoundProfilePage implements AfterViewInit {
 
 	photos: any[];
 	videos: any[];
-	audioThumbnails: any[];
+	audios: any[];
 
 	constructor(
 		// private popoverCtrl: PopoverController
 	) {
 		this.photos = [];
 		this.videos = [];
-		this.audioThumbnails = [];
+		this.audios = [];
 
 		// Photos
 		this.photos.push({
@@ -65,27 +65,27 @@ export class SoundProfilePage implements AfterViewInit {
 		});
 
 		// Audios
-		this.audioThumbnails.push({
+		this.audios.push({
 			src: '../../assets/images/profile/profile-12.jpg',
 			title: 'No Teniamos Nada Pero Eramos Felices'
 		});
-		this.audioThumbnails.push({
+		this.audios.push({
 			src: '../../assets/images/profile/profile-13.jpg',
 			title: 'One Love'
 		});
-		this.audioThumbnails.push({
+		this.audios.push({
 			src: '../../assets/images/profile/profile-14.jpg',
 			title: 'En Llamas'
 		});
-		this.audioThumbnails.push({
+		this.audios.push({
 			src: '../../assets/images/profile/profile-12.jpg',
 			title: 'No Teniamos Nada Pero Eramos Felices'
 		});
-		this.audioThumbnails.push({
+		this.audios.push({
 			src: '../../assets/images/profile/profile-13.jpg',
 			title: 'One Love'
 		});
-		this.audioThumbnails.push({
+		this.audios.push({
 			src: '../../assets/images/profile/profile-14.jpg',
 			title: 'En Llamas'
 		});
