@@ -1,3 +1,12 @@
-<p>
-  audio-list works!
-</p>
+<div class="pad-h-8">
+  <div *ngFor="let thumbnail of audioThumbnails" fxLayout="row" fxLayoutGap="16px" class="border-bottom pad-16">
+    <div fxFlex="64px" class="audio-thumbnail" [ngStyle]="{'background-image': 'url(' + thumbnail.src + ')'}"></div>
+    <div fxFlex fxLayout="column" fxLayoutGap="6px">
+      <div fxFlex fxLayoutAlign="start end">{{thumbnail.title}}</div>
+      <h4 fxFlex fxLayoutAlign="start center" class="mezzo-gray-text">
+        <ion-icon name="play" size="small" class="mezzo-gray-text mar-r-8"></ion-icon>100k plays
+      </h4>
+    </div>
+    <div fxFlex="32px" fxLayoutAlign="center center"><ion-icon name="heart" size="large" class="mezzo-black-20"></ion-icon></div>
+  </div>
+</div>
