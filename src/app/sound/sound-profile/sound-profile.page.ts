@@ -67,12 +67,27 @@ export class SoundProfilePage implements AfterViewInit {
 		// Audios
 		this.audioThumbnails.push({
 			src: '../../assets/images/profile/profile-12.jpg',
+			title: 'No Teniamos Nada Pero Eramos Felices'
 		});
 		this.audioThumbnails.push({
 			src: '../../assets/images/profile/profile-13.jpg',
+			title: 'One Love'
 		});
 		this.audioThumbnails.push({
 			src: '../../assets/images/profile/profile-14.jpg',
+			title: 'En Llamas'
+		});
+		this.audioThumbnails.push({
+			src: '../../assets/images/profile/profile-12.jpg',
+			title: 'No Teniamos Nada Pero Eramos Felices'
+		});
+		this.audioThumbnails.push({
+			src: '../../assets/images/profile/profile-13.jpg',
+			title: 'One Love'
+		});
+		this.audioThumbnails.push({
+			src: '../../assets/images/profile/profile-14.jpg',
+			title: 'En Llamas'
 		});
 	}
 
