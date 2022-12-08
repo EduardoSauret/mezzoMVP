@@ -97,7 +97,7 @@ export class SoundProfilePage implements AfterViewInit {
 			avatar: '../../assets/images/avatar-highost.png',
 			username: 'HiGhost',
 			posts: '30',
-			followers: '1.2m',
+			followers: '1.2M',
 			following: '1200'
 		};
 
