@@ -7,6 +7,7 @@ import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 })
 export class SoundProfilePage implements AfterViewInit {
 
+  bioData: {};
 	photos: any[];
 	videos: any[];
 	audios: any[];
@@ -14,6 +15,7 @@ export class SoundProfilePage implements AfterViewInit {
 	constructor(
 		// private popoverCtrl: PopoverController
 	) {
+    this.bioData;
 		this.photos = [];
 		this.videos = [];
 		this.audios = [];
@@ -89,6 +91,16 @@ export class SoundProfilePage implements AfterViewInit {
 			src: '../../assets/images/profile/profile-14.jpg',
 			title: 'En Llamas'
 		});
+
+    //BioData
+    this.bioData = {
+			avatar: '../../assets/images/avatar-highost.png',
+			username: 'HiGhost',
+			posts: '30',
+			followers: '1.2m',
+			following: '1200'
+		};
+
 	}
 
 	ngAfterViewInit() {

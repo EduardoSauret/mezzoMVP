@@ -1,5 +1,6 @@
-<div class="pad-h-8">
-  <div *ngFor="let audio of audios" fxLayout="row" fxLayoutGap="16px" class="border-bottom pad-16">
+<div class="pad-h-16">
+  <div *ngFor="let audio of audios; let isLast = last;" fxLayout="row" fxLayoutGap="16px" class="pad-16"
+    [ngClass]="{'border-bottom': !isLast}">
     <div fxFlex="64px" class="audio-thumbnail" [ngStyle]="{'background-image': 'url(' + audio.src + ')'}"></div>
     <div fxFlex fxLayout="column" fxLayoutGap="6px">
       <div fxFlex fxLayoutAlign="start end">{{audio.title}}</div>
@@ -7,6 +8,8 @@
         <ion-icon name="play" size="small" class="mezzo-gray-text mar-r-8"></ion-icon>100k plays
       </h4>
     </div>
-    <div fxFlex="32px" fxLayoutAlign="center center"><ion-icon name="heart" size="large" class="mezzo-black-20"></ion-icon></div>
+    <div fxFlex="32px" fxLayoutAlign="center center">
+      <ion-icon name="heart" size="large" class="mezzo-black-20"></ion-icon>
+    </div>
   </div>
 </div>

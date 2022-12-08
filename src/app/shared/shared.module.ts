@@ -15,6 +15,8 @@ import { PhotoListComponent } from './photo-list/photo-list.component';
 import { VideoListComponent } from './video-list/video-list.component';
 import { HeaderToolbarComponent } from './components/header-toolbar/header-toolbar.component';
 import { PostComponent } from './components/post/post.component'
+import { BioComponent } from './components/bio/bio.component';
+
 
 @NgModule({
 	declarations: [
@@ -22,7 +24,8 @@ import { PostComponent } from './components/post/post.component'
 		PhotoListComponent,
 		VideoListComponent,
 		HeaderToolbarComponent,
-		PostComponent
+		PostComponent,
+		BioComponent
 	],
 	imports: [
 		CommonModule,
@@ -48,7 +51,8 @@ import { PostComponent } from './components/post/post.component'
 		MatFormFieldModule,
 		FormsModule,
 		ReactiveFormsModule,
-		PostComponent
+		PostComponent,
+		BioComponent
 	]
 })
 export class SharedModule { }

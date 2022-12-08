@@ -1,0 +1,26 @@
+<div class="pad-16">
+	<div fxLayout="row" fxLayoutGap="1rem">
+		<div fxFlex="100px">
+			<ion-avatar>
+				<img [src]="bioData.avatar">
+			</ion-avatar>
+		</div>
+		<div fxFlex="25" fxLayout="column"  fxLayoutAlign="center center">
+			<h3 class="bold">{{bioData.posts}}</h3>
+			<h5>Posts</h5>
+		</div>
+		<div fxFlex="25" fxLayout="column" fxLayoutAlign="center center">
+			<h3 class="bold">{{bioData.followers}}</h3>
+			<h5>Followers</h5>
+		</div>
+		<div fxFlex="25" fxLayout="column" fxLayoutAlign="center center">
+			<h3 class="bold">{{bioData.following}}</h3>
+			<h5>Following</h5>
+		</div>
+	</div>
+	<div fxLayout="column" fxLayoutGap=".5rem" class="pad-t-10">
+		<h4 class="bold" fxFlex>{{bioData.username}}</h4>
+		<h4 class="mezzo-gray-text" fxFlex>Producer</h4>
+		<h4 fxFlex>I make beats and melodies for HipHop and Trap artists.</h4>
+	</div>
+</div>
