@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
 	<mezzo-header-toolbar [headerTitle]="'HiGhost'"></mezzo-header-toolbar>
-	<div class="padding">
+	<!-- <div class="padding">
 		<div fxLayout="row" fxLayoutGap="1rem">
 			<div fxFlex="100px">
 				<ion-avatar>
@@ -25,10 +25,11 @@
 			<h4 class="mezzo-gray-text" fxFlex>Producer</h4>
 			<h4 fxFlex>I make beats and melodies for HipHop and Trap artists.</h4>
 		</div>
-	</div>
+	</div> -->
+	<mezzo-bio [bioData]="bioData"></mezzo-bio>
 </ion-header>
 
-<super-tabs class="border-bottom">
+<super-tabs>
 	<super-tabs-toolbar>
 		<super-tab-button disableRipple="true">
 			<ion-icon name="camera"></ion-icon>

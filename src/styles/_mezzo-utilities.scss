@@ -13,10 +13,25 @@ img {
   border-bottom: 1px solid $mezzo-gray-border;
 }
 
+.no-border {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
 // Paddings
+.pad-16 {
+  padding: 16px;
+}
+
 .pad-h-8 {
   padding-left: 8px;
   padding-right: 8px
+}
+
+.pad-h-16 {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .pad-10 {
