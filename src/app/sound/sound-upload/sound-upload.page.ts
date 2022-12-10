@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class SoundUploadPage implements OnInit {
 
-
+	headerMenu: boolean = true;
 	imageURL: string;
 	desc: string;
 	noFace: boolean = false;

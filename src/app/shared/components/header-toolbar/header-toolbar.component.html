@@ -1,13 +1,13 @@
 <ion-toolbar class="border-bottom">
 	<div fxLayout="row" fxLayoutAlign="space-between center" class="pad-h-16">
-		<ion-icon name="menu" size="large" class="mezzo-indigo"></ion-icon>
+		<ion-icon fxFlex="24px" *ngIf="headerMenu" name="menu" size="large" class="mezzo-indigo"></ion-icon>
 		<!-- <span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">Sound</span> -->
 		<span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">{{headerTitle}}</span>
-		<ion-icon *ngIf="pageType === 'home'" name="funnel" size="large" class="mar-r-18 mezzo-indigo"></ion-icon>
-		<ion-icon name="search" size="large" class="mezzo-indigo"></ion-icon>
+		<ion-icon fxFlex="24px" *ngIf="headerFilter" name="funnel" size="large" class="mar-r-18 mezzo-indigo"></ion-icon>
+		<ion-icon fxFlex="24px" *ngIf="headerSearch" name="search" size="large" class="mezzo-indigo"></ion-icon>
 	</div>
 </ion-toolbar>
-<div class="section-overflow border-bottom" *ngIf="pageType === 'home'">
+<div class="section-overflow border-bottom" *ngIf="headerFilter">
 	<div class="overflow-content">
 		<mat-chip-list aria-label="Fish selection">
 			<div fxLayout="row" fxLayoutGap="10px">

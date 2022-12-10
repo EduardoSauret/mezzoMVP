@@ -7,7 +7,9 @@ import { SoundConstants } from './sound-home.constants';
   styleUrls: ['./sound-home.page.scss'],
 })
 export class SoundHomePage implements OnInit {
-
+  headerFilter: boolean = true;
+  headerMenu: boolean = true;
+  headerSearch: boolean = true;
   posts: any[];
   constructor() {
     this.posts = [];

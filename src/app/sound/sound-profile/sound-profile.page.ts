@@ -11,6 +11,9 @@ export class SoundProfilePage implements AfterViewInit {
 	photos: any[];
 	videos: any[];
 	audios: any[];
+  headerTitle = 'Username'
+  headerMenu = true;
+  
 
 	constructor(
 		// private popoverCtrl: PopoverController
