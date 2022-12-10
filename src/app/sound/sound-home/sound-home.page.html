@@ -1,4 +1,7 @@
-<mezzo-header-toolbar [headerTitle]="'Sound'" [pageType]="'home'"></mezzo-header-toolbar>
+<ion-header class="ion-no-border">
+	<mezzo-header-toolbar [headerMenu]="true" [headerTitle]="'Sound'" [headerFilter]="headerFilter" [headerSearch]="true">
+	</mezzo-header-toolbar>
+</ion-header>
 <ion-content>
   <ng-container *ngFor="let postData of posts">
     <mezzo-post 

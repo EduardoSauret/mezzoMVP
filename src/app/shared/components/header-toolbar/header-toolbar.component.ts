@@ -7,8 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderToolbarComponent implements OnInit {
 
+	@Input('headerMenu') headerMenu: boolean;
+	@Input('headerSearch') headerSearch: boolean;
 	@Input('headerTitle') headerTitle: string;
-	@Input('pageType') pageType: string;
+	@Input('headerFilter') headerFilter: boolean;
 
   constructor() { }
 
