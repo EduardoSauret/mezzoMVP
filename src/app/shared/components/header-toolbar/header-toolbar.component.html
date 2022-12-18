@@ -1,7 +1,8 @@
 <ion-toolbar class="border-bottom">
-	<div fxLayout="row" fxLayoutAlign="space-between center" class="pad-h-16">
-		<ion-icon fxFlex="24px" *ngIf="headerMenu" name="menu" size="large" class="mezzo-indigo"></ion-icon>
-		<!-- <span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">Sound</span> -->
+	<div fxLayout="row" fxLayoutAlign="space-between center" class="pad-h-8">
+		<div fxFlex="48px" fxLayoutAlign="start center" *ngIf="headerMenu">
+			<ion-menu-button class="mezzo-indigo"></ion-menu-button>
+		</div>
 		<span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">{{headerTitle}}</span>
 		<ion-icon fxFlex="24px" *ngIf="headerFilter" name="funnel" size="large" class="mar-r-18 mezzo-indigo"></ion-icon>
 		<ion-icon fxFlex="24px" *ngIf="headerSearch" name="search" size="large" class="mezzo-indigo"></ion-icon>
