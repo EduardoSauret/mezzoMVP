@@ -11,3 +11,10 @@ ion-menu {
 		// --background:red;
 	}
 }
+
+.nav-link {
+	cursor: pointer;
+	&:hover {
+		color: $mezzo-indigo;
+	}
+}

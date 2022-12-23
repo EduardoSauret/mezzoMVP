@@ -9,14 +9,14 @@ import { AuthService } from './auth.service';
 // ];
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'sound', pathMatch: 'full' },
+	{ path: '', redirectTo: 'music', pathMatch: 'full' },
 	{ path: 'login', loadChildren: './login/login.module#LoginPageModule' },
 	{ path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
 	{ path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthService] },
 	{ path: 'new-profile', loadChildren: './new-profile/new-profile.module#NewProfilePageModule', canActivate: [AuthService] },
-	{ path: 'sound', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthService] },
-	{ path: 'visual', loadChildren: './visual/visual-tabs/visual-tabs.module#VisualTabsPageModule' },
-	{ path: 'performance', loadChildren: './performance/performance-tabs/performance-tabs.module#PerformanceTabsPageModule' }
+	{ path: 'music', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthService] },
+	{ path: 'video', loadChildren: './visual/visual-tabs/visual-tabs.module#VisualTabsPageModule' },
+	{ path: 'acting', loadChildren: './performance/performance-tabs/performance-tabs.module#PerformanceTabsPageModule' }
 ];
 
 @NgModule({
