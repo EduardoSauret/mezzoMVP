@@ -1,14 +1,18 @@
 <ion-app>
 	<ion-menu contentId="main-content">
-		<ion-header>
+		<ion-header class="ion-padding">
 			<ion-toolbar>
 				<div fxLayout="row" fxLayoutAlign="space-between center">
-					<ion-title>Menu Content</ion-title>
+					<h2>Mezzo</h2>
 					<ion-icon fxFlex="24px" *ngIf="headerSearch" name="search" size="large" class="mezzo-indigo"></ion-icon>
 				</div>
 			</ion-toolbar>
 		</ion-header>
-		<ion-content class="ion-padding">This is the menu content.</ion-content>
+		<ion-content class="ion-padding" fxLayout="column" fxLayoutGap="1rem">
+			<h3 class="nav-link" (click)="goTo('acting')">Actors</h3>
+			<h3 class="nav-link" (click)="goTo('music')">Artists</h3>
+			<h3 class="nav-link" (click)="goTo('video')">Film Makers</h3>
+		</ion-content>
 	</ion-menu>
 	<div class="ion-page" id="main-content">
 		<ion-content>
