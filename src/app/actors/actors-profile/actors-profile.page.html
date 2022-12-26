@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+	<mezzo-header-toolbar [headerMenu]="headerMenu" [headerTitle]="'HiGhost'"></mezzo-header-toolbar>
+	<mezzo-bio [bioData]="bioData"></mezzo-bio>
+</ion-header>
+
+<super-tabs>
+	<super-tabs-toolbar>
+		<super-tab-button disableRipple="true">
+			<ion-icon name="camera"></ion-icon>
+		</super-tab-button>
+		<super-tab-button disableRipple="true">
+			<ion-icon name="videocam"></ion-icon>
+		</super-tab-button>
+		<super-tab-button disableRipple="true">
+			<ion-icon name="volume-high"></ion-icon>
+		</super-tab-button>
+	</super-tabs-toolbar>
+	<super-tabs-container>
+		<super-tab>
+			<ion-content>
+				<mezzo-photo-list [photos]="photos"></mezzo-photo-list>
+			</ion-content>
+		</super-tab>
+		<super-tab>
+			<ion-content>
+				<mezzo-video-list [videos]="videos"></mezzo-video-list>
+			</ion-content>
+		</super-tab>
+		<super-tab>
+			<ion-content>
+				<mezzo-audio-list [audios]="audios"></mezzo-audio-list>
+			</ion-content>
+		</super-tab>
+	</super-tabs-container>
+</super-tabs>

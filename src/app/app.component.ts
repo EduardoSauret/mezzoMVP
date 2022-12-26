@@ -12,6 +12,9 @@ import { MenuController } from '@ionic/angular';
 	styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
+	navLinks: any[];
+
 	constructor(
 		private platform: Platform,
 		private splashScreen: SplashScreen,
@@ -20,6 +23,7 @@ export class AppComponent {
 		private menu: MenuController
 	) {
 		this.initializeApp();
+		this.navLinks = ['Actors','Artists','Videographers']
 	}
 
 	initializeApp() {

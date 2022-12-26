@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
-import { PerformanceUploadPage } from './performance-upload.page';
+import { ActorsTabsPage } from './actors-tabs.page';
+import { ActorsTabsRoutingModule } from './actors-tabs.router.module';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: PerformanceUploadPage
+		component: ActorsTabsPage
 	}
 ];
 
@@ -19,8 +18,9 @@ const routes: Routes = [
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		ActorsTabsRoutingModule
 	],
-	declarations: [PerformanceUploadPage]
+	declarations: [ActorsTabsPage]
 })
-export class PerformanceUploadPageModule { }
+export class ActorsTabsPageModule { }

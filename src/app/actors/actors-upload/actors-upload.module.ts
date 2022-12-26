@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerformanceEditProfilePage } from './performance-edit-profile.page';
+import { ActorsUploadPage } from './actors-upload.page';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: PerformanceEditProfilePage
+		component: ActorsUploadPage
 	}
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
 		IonicModule,
 		RouterModule.forChild(routes)
 	],
-	declarations: [PerformanceEditProfilePage]
+	declarations: [ActorsUploadPage]
 })
-export class PerformanceEditProfilePageModule { }
+export class ActorsUploadPageModule { }

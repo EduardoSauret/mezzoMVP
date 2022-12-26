@@ -14,9 +14,9 @@ const routes: Routes = [
 	{ path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
 	{ path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthService] },
 	{ path: 'new-profile', loadChildren: './new-profile/new-profile.module#NewProfilePageModule', canActivate: [AuthService] },
-	{ path: 'music', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthService] },
-	{ path: 'video', loadChildren: './visual/visual-tabs/visual-tabs.module#VisualTabsPageModule' },
-	{ path: 'acting', loadChildren: './performance/performance-tabs/performance-tabs.module#PerformanceTabsPageModule' }
+	{ path: 'artists', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthService] },
+	{ path: 'videographers', loadChildren: './visual/visual-tabs/visual-tabs.module#VisualTabsPageModule' },
+	{ path: 'actors', loadChildren: './actors/actors-tabs/actors-tabs.module#ActorsTabsPageModule' }
 ];
 
 @NgModule({

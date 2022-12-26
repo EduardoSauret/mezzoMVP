@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
-import { PerformanceHomePage } from './performance-home.page';
+import { ActorsProfilePage } from './actors-profile.page';
+import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: PerformanceHomePage
+		component: ActorsProfilePage
 	}
 ];
 
@@ -19,8 +18,9 @@ const routes: Routes = [
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		SharedModule
 	],
-	declarations: [PerformanceHomePage]
+	declarations: [ActorsProfilePage]
 })
-export class PerformanceHomePageModule { }
+export class ActorsProfilePageModule { }
