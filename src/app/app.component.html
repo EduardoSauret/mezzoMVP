@@ -10,7 +10,7 @@
 		</ion-header>
 		<ion-content class="ion-padding" fxLayout="column" fxLayoutGap="1rem">
 			<ng-container *ngFor="let navLink of navLinks">
-				<h3 class="nav-link" (click)="goTo(navLink.toLowerCase())">{{navLink}}</h3>
+				<h3 class="nav-link" (click)="goTo(navLink.routePath)">{{navLink.profileType}}</h3>
 			</ng-container>
 		</ion-content>
 	</ion-menu>

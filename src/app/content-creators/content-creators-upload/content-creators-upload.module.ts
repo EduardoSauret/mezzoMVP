@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
-import { SharedModule } from '../../shared/shared.module';
-import { VisualHomePage } from './visual-home.page';
+
+import { ContentCreatorsUploadPage } from './content-creators-upload.page';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: VisualHomePage
+		component: ContentCreatorsUploadPage
 	}
 ];
 
@@ -18,9 +19,8 @@ const routes: Routes = [
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		RouterModule.forChild(routes),
-		SharedModule,
+		RouterModule.forChild(routes)
 	],
-	declarations: [VisualHomePage]
+	declarations: [ContentCreatorsUploadPage]
 })
-export class VisualHomePageModule { }
+export class ContentCreatorsUploadPageModule { }

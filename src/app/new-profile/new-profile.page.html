@@ -4,7 +4,7 @@
 		<ion-slide class="slide1" fxLayout="column" fxFlexFill no-bounce>
 			<div fxFlex="70" fxLayoutAlign="start end">
 				<div fxLayout="column">
-					<h1 fxFlex>Sonido</h1>
+					<h1 fxFlex>Productores de Audio</h1>
 					<h2 fxFlex>Deja que otras personas descubran tu talento</h2>
 					<ion-select [(ngModel)]="selectedMusicProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="ionChangeFn($event)">
 						<ion-select-option *ngFor="let profile of music" [value]="profile">{{profile}}</ion-select-option>
@@ -28,7 +28,7 @@
 		<ion-slide class="slide2" fxLayout="column" fxFlexFill no-bounce>
 			<div fxFlex="70" fxLayoutAlign="start end">
 				<div fxLayout="column">
-					<h1 fxFlex>Artes Visuales</h1>
+					<h1 fxFlex>Creadores de Contenido</h1>
 					<h2 fxFlex>Publica tus proyectos y descubre el trabajo de otros</h2>
 					<ion-select [(ngModel)]="selectedVisualProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="ionChangeFn($event)">
 						<ion-select-option *ngFor="let profile of visual" [value]="profile">{{profile}}</ion-select-option>
@@ -53,7 +53,7 @@
 		<ion-slide class="slide3" fxLayout="column" fxFlexFill no-bounce>
 			<div fxFlex="70" fxLayoutAlign="start end">
 				<div fxLayout="column">
-					<h1 fxFlex>Artes Escénicas</h1>
+					<h1 fxFlex>Talento</h1>
 					<h2 fxFlex>Conecta y colabora con otros artistas cerca de ti</h2>
 					<ion-select [(ngModel)]="selectedPerformanceProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="ionChangeFn($event)">
 						<ion-select-option *ngFor="let profile of actors" [value]="profile">{{profile}}</ion-select-option>

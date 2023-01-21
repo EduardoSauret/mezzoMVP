@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VisualUploadPage } from './visual-upload.page';
+import { ContentCreatorsPostPage } from './content-creators-post.page';
 
-describe('VisualUploadPage', () => {
-	let component: VisualUploadPage;
-	let fixture: ComponentFixture<VisualUploadPage>;
+describe('ContentCreatorsPostPage', () => {
+	let component: ContentCreatorsPostPage;
+	let fixture: ComponentFixture<ContentCreatorsPostPage>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [VisualUploadPage],
+			declarations: [ContentCreatorsPostPage],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(VisualUploadPage);
+		fixture = TestBed.createComponent(ContentCreatorsPostPage);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

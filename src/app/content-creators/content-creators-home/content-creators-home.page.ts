@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'app-visual-home',
-	templateUrl: './visual-home.page.html',
-	styleUrls: ['./visual-home.page.scss'],
+	selector: 'app-content-creators-home',
+	templateUrl: './content-creators-home.page.html',
+	styleUrls: ['./content-creators-home.page.scss'],
 })
-export class VisualHomePage implements OnInit {
+export class ContentCreatorsHomePage implements OnInit {
   headerFilter: boolean = true;
   headerMenu: boolean = true;
   headerSearch: boolean = true;

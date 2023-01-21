@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonTabs } from '@ionic/angular';
 
 @Component({
-	selector: 'app-visual-tabs',
-	templateUrl: './visual-tabs.page.html',
-	styleUrls: ['./visual-tabs.page.scss'],
+	selector: 'app-content-creators-tabs',
+	templateUrl: './content-creators-tabs.page.html',
+	styleUrls: ['./content-creators-tabs.page.scss'],
 })
-export class VisualTabsPage implements OnInit {
+export class ContentCreatorsTabsPage implements OnInit {
 
 	@ViewChild('tabs', { static: true }) tabs: IonTabs;
 

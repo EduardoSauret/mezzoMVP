@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
 
 	async login() {
 		console.log('login clicked');
-		this.router.navigate(['/music/home']);
+		this.router.navigate(['/artists/home']);
 		// const { username, password } = this;
 		// try {
 		// 	// kind of a hack.

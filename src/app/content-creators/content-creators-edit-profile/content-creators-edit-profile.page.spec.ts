@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VisualHomePage } from './visual-home.page';
+import { ContentCreatorsEditProfilePage } from './content-creators-edit-profile.page';
 
-describe('VisualHomePage', () => {
-	let component: VisualHomePage;
-	let fixture: ComponentFixture<VisualHomePage>;
+describe('ContentCreatorsEditProfilePage', () => {
+	let component: ContentCreatorsEditProfilePage;
+	let fixture: ComponentFixture<ContentCreatorsEditProfilePage>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [VisualHomePage],
+			declarations: [ContentCreatorsEditProfilePage],
 			schemas: [CUSTOM_ELEMENTS_SCHEMA],
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(VisualHomePage);
+		fixture = TestBed.createComponent(ContentCreatorsEditProfilePage);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

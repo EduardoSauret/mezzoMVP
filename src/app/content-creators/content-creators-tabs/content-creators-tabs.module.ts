@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
-import { VisualProfilePage } from './visual-profile.page';
+import { ContentCreatorsTabsPage } from './content-creators-tabs.page';
+import { ContentCreatorsTabsRoutingModule } from './content-creators-tabs.router.module';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: VisualProfilePage
+		component: ContentCreatorsTabsPage
 	}
 ];
 
@@ -19,8 +18,9 @@ const routes: Routes = [
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		ContentCreatorsTabsRoutingModule
 	],
-	declarations: [VisualProfilePage]
+	declarations: [ContentCreatorsTabsPage]
 })
-export class VisualProfilePageModule { }
+export class ContentCreatorsTabsPageModule { }

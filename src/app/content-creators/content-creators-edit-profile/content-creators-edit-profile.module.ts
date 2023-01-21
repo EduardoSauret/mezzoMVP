@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { VisualUploadPage } from './visual-upload.page';
+import { ContentCreatorsEditProfilePage } from './content-creators-edit-profile.page';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: VisualUploadPage
+		component: ContentCreatorsEditProfilePage
 	}
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
 		IonicModule,
 		RouterModule.forChild(routes)
 	],
-	declarations: [VisualUploadPage]
+	declarations: [ContentCreatorsEditProfilePage]
 })
-export class VisualUploadPageModule { }
+export class ContentCreatorsEditProfilePageModule { }

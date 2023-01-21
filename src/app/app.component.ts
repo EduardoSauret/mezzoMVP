@@ -23,7 +23,12 @@ export class AppComponent {
 		private menu: MenuController
 	) {
 		this.initializeApp();
-		this.navLinks = ['Actors','Artists','Videographers']
+		this.navLinks = [
+			{profileType: 'Content Creators', routePath: 'content-creators'},
+			{profileType: 'Sound Producers', routePath: 'sound/home'},
+			{profileType: 'Talent', routePath: 'performance'},
+		];
+
 	}
 
 	initializeApp() {
