@@ -18,12 +18,12 @@ export class NewProfilePage implements OnInit {
 	};
 
 	music: any[] = ['Bajista', 'Guitarrista', 'Baterista'];
-	visual: any[] = ['Fotografo', 'Camarografo', 'Director'];
-	performance: any[] = ['Modelo', 'Actor', 'Coreografo'];
+	video: any[] = ['Fotografo', 'Camarografo', 'Director'];
+	actors: any[] = ['Modelo', 'Actor', 'Coreografo'];
 
 	selectedMusicProfile;
-	selectedVisualProfile;
-	selectedPerformanceProfile;
+	selectedVideoProfile;
+	selectedActorsProfile;
 
 	busy;
 
@@ -56,10 +56,10 @@ export class NewProfilePage implements OnInit {
 		// 	profile: selectedVisualProfile
 		// });
 
-		this.router.navigate(['/visual']);
+		this.router.navigate(['/content-creators']);
 	}
 
-	savePerformanceProfile() {
+	saveActorsProfile() {
 		// console.log(this.selectedPerformanceProfile);
 		// const selectedPerformanceProfile = this.selectedPerformanceProfile;
 
@@ -68,7 +68,7 @@ export class NewProfilePage implements OnInit {
 		// 	profile: selectedPerformanceProfile
 		// });
 
-		this.router.navigate(['/performance']);
+		this.router.navigate(['/actors']);
 	}
 
 	async saveNewProfile() {

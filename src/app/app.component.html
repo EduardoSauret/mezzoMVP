@@ -9,9 +9,9 @@
 			</ion-toolbar>
 		</ion-header>
 		<ion-content class="ion-padding" fxLayout="column" fxLayoutGap="1rem">
-			<h3 class="nav-link" (click)="goTo('acting')">Actors</h3>
-			<h3 class="nav-link" (click)="goTo('music')">Artists</h3>
-			<h3 class="nav-link" (click)="goTo('video')">Film Makers</h3>
+			<ng-container *ngFor="let navLink of navLinks">
+				<h3 class="nav-link" (click)="goTo(navLink.routePath)">{{navLink.profileType}}</h3>
+			</ng-container>
 		</ion-content>
 	</ion-menu>
 	<div class="ion-page" id="main-content">

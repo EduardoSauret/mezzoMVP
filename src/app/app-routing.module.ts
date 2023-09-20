@@ -9,16 +9,15 @@ import { AuthService } from './auth.service';
 // ];
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'music', pathMatch: 'full' },
+	{ path: '', redirectTo: 'sound', pathMatch: 'full' },
 	{ path: 'login', loadChildren: './login/login.module#LoginPageModule' },
 	{ path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
 	{ path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthService] },
 	{ path: 'new-profile', loadChildren: './new-profile/new-profile.module#NewProfilePageModule', canActivate: [AuthService] },
-	{ path: 'music', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthService] },
-	{ path: 'video', loadChildren: './visual/visual-tabs/visual-tabs.module#VisualTabsPageModule' },
-	{ path: 'acting', loadChildren: './performance/performance-tabs/performance-tabs.module#PerformanceTabsPageModule' }
+	{ path: 'sound', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule'},
+	{ path: 'influencers', loadChildren: './actors/actors-tabs/actors-tabs.module#ActorsTabsPageModule' },
+	{ path: 'content-creators', loadChildren: './content-creators/content-creators-tabs/content-creators-tabs.module#ContentCreatorsTabsPageModule' },
 ];
-
 @NgModule({
 	imports: [
 		RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

@@ -1,3 +1,4 @@
+// Remove header shadow
 .header-md:after {
-	background-image: none;
+	background-image: none !important;
 }
