@@ -4,6 +4,11 @@ import { ContentCreatorsTabsPage } from './content-creators-tabs.page';
 
 const routes: Routes = [
 	{
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+	{
 		path: '',
 		component: ContentCreatorsTabsPage,
 		children: [
