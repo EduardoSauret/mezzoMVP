@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
+import { UserProfile, UserService } from '../user.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
@@ -11,71 +11,72 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class NewProfilePage implements OnInit {
 
 	shouldScroll;
+	selectedValues;
+	selectedArtistProfile;
+	selectedCreativeProfile;
+	selectedInfluencerProfile;
+	selectedArtistCategories: string[] = [];
+	selectedCreativeCategories: string[] = [];
+	selectedInfluencerCategories: string[] = [];
+	busy;
 
 	slideOpts = {
 		initialSlide: 0,
 		speed: 400
 	};
 
-	artists: any[] = ['Guitar', 'Singer', 'Bass', 'DJ', 'Drums', 'Music Producer'];
-	creatives: any[] = ['Video', 'Photo', 'MUA', 'Illustration', 'Stylist', 'Art Director', 'Creative Director', 'Assistant'];
-	influencers: any[] = ['Modelo', 'Actor', 'Youtuber', 'Deportista', 'Tiktoker', 'Instagram', 'Twitch'];
-
-	selectedArtistProfile;
-	selectedCreativeProfile;
-	selectedInfluencerProfile;
-
-	busy;
+	artistCategories: any[] = ['Guitar', 'Singer', 'Bass', 'DJ', 'Drums', 'Music Producer'];
+	creativeCategories: any[] = ['Video', 'Photo', 'MUA', 'Illustration', 'Stylist', 'Art Director', 'Creative Director', 'Assistant'];
+	influencerCategories: any[] = ['Modelo', 'Actor', 'Youtuber', 'Deportista', 'Tiktoker', 'Instagram', 'Twitch'];
 
 	constructor(
 		private router: Router,
-		private user: UserService,
+		private userService: UserService,
 		private afstore: AngularFirestore) { }
 
 	ngOnInit() {
 	}
 
-	saveSoundProfile() {
-		// console.log(this.selectedMusicProfile);
-		// const selectedMusicProfile = this.selectedMusicProfile;
-
-		// this.afstore.doc(`users/${this.user.getUID()}`).update({
-		// 	branch: 'sound',
-		// 	profile: selectedMusicProfile
-		// });
-
-		this.router.navigate(['/sound']);
+	onSelectCategories(event, profileType: string){
+		const selectedCategories = event.detail.value;
+		
+		if(profileType === 'artist') {
+			this.selectedArtistCategories = selectedCategories;
+		} else if(profileType === 'creative') {
+			this.selectedCreativeCategories = selectedCategories;
+		} else if(profileType === 'influencer') {
+			this.selectedInfluencerCategories = selectedCategories;
+		}
 	}
+	
+	saveProfile(profileType: string){
+		const userId = this.userService.getUID();
+		const userProfile: UserProfile = {
+			uid: userId,
+			username: '',  // Initialize with empty string
+			bio: '',  // Initialize with empty string
+			profileType: profileType,
+			artist: this.selectedArtistCategories,
+			creative: this.selectedCreativeCategories,
+			influencer: this.selectedInfluencerCategories
+		};
+		
+		if(profileType === 'artist') {
+			this.selectedValues = this.selectedArtistCategories;
+		} else if(profileType === 'creative') {
+			this.selectedValues = this.selectedCreativeCategories;
+		} else if(profileType === 'influencer') {
+			this.selectedValues = this.selectedInfluencerCategories;
+		}
 
-	saveVisualProfile() {
-		// console.log(this.selectedVisualProfile);
-		// const selectedVisualProfile = this.selectedVisualProfile;
-
-		// this.afstore.doc(`users/${this.user.getUID()}`).update({
-		// 	branch: 'visual',
-		// 	profile: selectedVisualProfile
-		// });
-
-		this.router.navigate(['/content-creators']);
-	}
-
-	saveActorsProfile() {
-		// console.log(this.selectedPerformanceProfile);
-		// const selectedPerformanceProfile = this.selectedPerformanceProfile;
-
-		// this.afstore.doc(`users/${this.user.getUID()}`).update({
-		// 	branch: 'performance',
-		// 	profile: selectedPerformanceProfile
-		// });
-
-		this.router.navigate(['/actors']);
-	}
-
-
-// Ionic change detection method for select
-	ionChangeFn(event) {
-		console.log(event.detail.value);
-
+		this.userService.updateUserProfile(userId, userProfile)
+			.then(() => {
+				console.log('User profile saved:', userProfile);
+				this.router.navigate([`/${profileType}s`]);
+			})
+			.catch((error) => {
+				console.error('Error saving user profile:', error);
+			});
 	}
 
 }

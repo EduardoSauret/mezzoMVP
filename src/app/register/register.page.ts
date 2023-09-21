@@ -27,7 +27,7 @@ export class RegisterPage implements OnInit {
 	constructor(
 		public afAuth: AngularFireAuth,
 		public afstore: AngularFirestore,
-		public user: UserService,
+		public userService: UserService,
 		public alertController: AlertController,
 		public router: Router,
 		private fb: FormBuilder,
@@ -56,19 +56,14 @@ export class RegisterPage implements OnInit {
 			this.router.navigate(['/new-profile']);
       // Assume you have the user's UID obtained during registration/authentication
       // Replace 'user123' with the actual UID
-      const uid = userCredential.user.uid;
-
+      const userCredentials = userCredential.user;
 
 			const userProfile: UserProfile = {
-				uid: uid,
-				username: '',  // Initialize with empty string
-				bio: '',  // Initialize with empty string
-				artist: [],
-				creative: [],
-				influencer: []
+				uid: userCredentials.uid,
+				email: userCredentials.email,
 			};
 
-			this.user.addUserProfile(userProfile)
+			this.userService.addUserProfile(userProfile)
 				.then(() => {
 					console.log('User registered and profile created:', userProfile);
 				})
@@ -81,41 +76,5 @@ export class RegisterPage implements OnInit {
 			console.error('Error registering user:', error);
 		});
   }
-
-	// async presentAlert(title: string, content: string) {
-	// 	const alert = await this.alertController.create({
-	// 		header: title,
-	// 		message: content,
-	// 		buttons: ['OK']
-	// 	});
-	// 	await alert.present();
-	// }
-
-	// async register() {
-	// 	this.router.navigate(['/new-profile']);
-	// 	const { username, password, confirmPassword } = this;
-	// 	// if (password !== confirmPassword) {
-	// 	// 	return console.error("Passwords don't match");
-	// 	// 	this.presentAlert('test', 'test');
-	// 	// }
-	// 	try {
-	// 		const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + '@luxilab.com', password);
-	// 		this.afstore.doc(`users/${res.user.uid}`).set({
-	// 			username
-	// 		});
-	// 		this.user.setUser({
-	// 			username,
-	// 			uid: res.user.uid
-	// 		});
-	// 		// this.presentAlert('Success', 'You are registered!');
-	// 		this.router.navigate(['/new-profile']);
-	// 	} catch (error) {
-	// 		console.dir(error);
-	// 	}
-	// }
-
-	// public login() {
-	// 	this.router.navigate(['/login']);
-	// }
 
 }

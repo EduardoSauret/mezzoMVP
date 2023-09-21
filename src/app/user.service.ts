@@ -12,11 +12,13 @@ export interface User {
 
 export interface UserProfile {
 	uid: string;  // Firebase UID
-  username: string;
-  bio: string;
-  artist: string[];  // Array of artist data
-  creative: string[];  // Array of creative data
-  influencer: string[];  // Array of influencer data
+	email?: string;
+  username?: string;
+  bio?: string;
+	profileType?: string;
+  artist?: string[];  // Array of artist data
+  creative?: string[];  // Array of creative data
+  influencer?: string[];  // Array of influencer data
 }
 
 @Injectable()
@@ -84,6 +86,11 @@ export class UserService {
 	addUserProfile(userProfile: UserProfile): Promise<void> {
 		const { uid, ...userData } = userProfile;  // Extract UID and other data
 		return this.firestore.collection('userProfiles').doc(uid).set(userData);
+	}
+
+	updateUserProfile(uid: string, userProfile: UserProfile): Promise<void> {
+		const { uid: _, ...userData } = userProfile;
+		return this.firestore.collection('userProfiles').doc(uid).update(userData);
 	}
 
   getUserProfile(uid: string): Observable<any> {
