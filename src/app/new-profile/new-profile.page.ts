@@ -17,13 +17,13 @@ export class NewProfilePage implements OnInit {
 		speed: 400
 	};
 
-	music: any[] = ['Bajista', 'Guitarrista', 'Baterista'];
-	video: any[] = ['Fotografo', 'Camarografo', 'Director'];
-	actors: any[] = ['Modelo', 'Actor', 'Coreografo'];
+	artists: any[] = ['Guitar', 'Singer', 'Bass', 'DJ', 'Drums', 'Music Producer'];
+	creatives: any[] = ['Video', 'Photo', 'MUA', 'Illustration', 'Stylist', 'Art Director', 'Creative Director', 'Assistant'];
+	influencers: any[] = ['Modelo', 'Actor', 'Youtuber', 'Deportista', 'Tiktoker', 'Instagram', 'Twitch'];
 
-	selectedMusicProfile;
-	selectedVideoProfile;
-	selectedActorsProfile;
+	selectedArtistProfile;
+	selectedCreativeProfile;
+	selectedInfluencerProfile;
 
 	busy;
 
@@ -71,44 +71,11 @@ export class NewProfilePage implements OnInit {
 		this.router.navigate(['/actors']);
 	}
 
-	async saveNewProfile() {
-		this.busy = true;
-
-		// const image = this.imageURL;
-		// const activeEffect = this.activeEffect;
-		// const desc = this.desc;
-
-		// this.afstore.doc(`users/${this.user.getUID()}`).update({
-		// 	posts: firestore.FieldValue.arrayUnion(`${image}/${activeEffect}`)
-		// });
-
-		// this.afstore.doc(`posts/${image}`).set({
-		// 	desc,
-		// 	author: this.user.getUsername(),
-		// 	likes: [],
-		// 	effect: activeEffect
-		// });
-
-		// this.busy = false;
-		// this.imageURL = '';
-		// this.desc = '';
-
-
-
-		// const alert = await this.alertController.create({
-		// 	header: 'Done',
-		// 	message: 'Your post was created!',
-		// 	buttons: ['Cool!']
-		// });
-
-		// await alert.present();
-
-		this.router.navigate(['/tabs/home']);
-	}
 
 // Ionic change detection method for select
 	ionChangeFn(event) {
 		console.log(event.detail.value);
+
 	}
 
 }

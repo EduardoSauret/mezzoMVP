@@ -12,16 +12,35 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
 	username = '';
+	email = '';
 	password = '';
+	verifyPassword = '';
 
 	constructor(public afAuth: AngularFireAuth, public user: UserService, public router: Router) { }
 
 	ngOnInit() {
+		
 	}
 
-	async login() {
-		console.log('login clicked');
-		this.router.navigate(['/artists/home']);
+	onSubmit(){
+		//TODO: get userprofile from firebase and get profileType
+		// const profileType = this.user.getProfileType();
+		const profileType = 'influencers';
+		// this.router.navigate([`${profileType}/profile`]);
+
+		this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
+		.then(() => {
+      this.router.navigate([`${profileType}/profile`]);
+    })
+    .catch(error => {
+			console.log('Login Error');
+      console.log(error);
+    });
+	}
+
+	// async login() {
+		// console.log('login clicked');
+		// this.router.navigate(['/artists/home']);
 		// const { username, password } = this;
 		// try {
 		// 	// kind of a hack.
@@ -41,6 +60,7 @@ export class LoginPage implements OnInit {
 		// 		console.log('"User not found');
 		// 	}
 		// }
-	}
+	// }
+
 
 }

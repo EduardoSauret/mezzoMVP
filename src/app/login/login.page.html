@@ -4,14 +4,17 @@
 	
 		<div fxLayout="column" class="pad-b-30">
 			<mat-form-field fxFlex>
-				<input matInput placeholder="Username" type="text" [(ngModel)]="username">
+				<input matInput placeholder="Email" type="text" [(ngModel)]="email">
 			</mat-form-field>
 			<mat-form-field fxFlex>
 				<input matInput placeholder="Password" type="password" [(ngModel)]="password">
 			</mat-form-field>
+			<mat-form-field fxFlex>
+				<input matInput placeholder="Verify Password" type="password" [(ngModel)]="verifyPassword">
+			</mat-form-field>
 		</div>
 		<div fxFlex >
-			<ion-button fill="solid" expand="block" color="dark" shape="round" (click)="login()">Login</ion-button>
+			<ion-button fill="solid" expand="block" color="dark" shape="round" (click)="onSubmit()">Login</ion-button>
 		</div>
 	</div>
 </ion-content>
