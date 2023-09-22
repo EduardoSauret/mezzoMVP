@@ -10,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class NewProfilePage implements OnInit {
 
+	username;
 	shouldScroll;
 	selectedValues;
 	selectedArtistProfile;
@@ -18,7 +19,6 @@ export class NewProfilePage implements OnInit {
 	selectedArtistCategories: string[] = [];
 	selectedCreativeCategories: string[] = [];
 	selectedInfluencerCategories: string[] = [];
-	busy;
 
 	slideOpts = {
 		initialSlide: 0,
@@ -53,20 +53,16 @@ export class NewProfilePage implements OnInit {
 		const userId = this.userService.getUID();
 		const userProfile: UserProfile = {
 			uid: userId,
-			username: '',  // Initialize with empty string
-			bio: '',  // Initialize with empty string
+			username: this.username,  // Initialize with empty string
 			profileType: profileType,
-			artist: this.selectedArtistCategories,
-			creative: this.selectedCreativeCategories,
-			influencer: this.selectedInfluencerCategories
 		};
 		
-		if(profileType === 'artist') {
-			this.selectedValues = this.selectedArtistCategories;
-		} else if(profileType === 'creative') {
-			this.selectedValues = this.selectedCreativeCategories;
-		} else if(profileType === 'influencer') {
-			this.selectedValues = this.selectedInfluencerCategories;
+		if (profileType === 'artist' && this.selectedArtistCategories.length > 0) {
+			userProfile.artist = this.selectedArtistCategories;
+		} else if (profileType === 'creative' && this.selectedCreativeCategories.length > 0) {
+			userProfile.creative = this.selectedCreativeCategories;
+		} else if (profileType === 'influencer' && this.selectedInfluencerCategories.length > 0) {
+			userProfile.influencer = this.selectedInfluencerCategories;
 		}
 
 		this.userService.updateUserProfile(userId, userProfile)

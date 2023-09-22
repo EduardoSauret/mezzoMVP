@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '../shared/shared.module';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -21,7 +22,8 @@ const routes: Routes = [
 		FormsModule,
 		IonicModule,
 		RouterModule.forChild(routes),
-		FlexLayoutModule
+		FlexLayoutModule,
+		SharedModule
 	],
 	declarations: [NewProfilePage]
 })
