@@ -6,6 +6,9 @@
 				<div fxLayout="column">
 					<h1 fxFlex>Artistas</h1>
 					<h2 fxFlex>Deja que otras personas descubran tu talento</h2>
+					<mat-form-field fxFlex>
+						<input matInput type="text" [(ngModel)]="username" placeholder="Username"/>
+					</mat-form-field>
 					<ion-select [(ngModel)]="selectedArtistProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="onSelectCategories($event, 'artist')" multiple>
 						<ion-select-option *ngFor="let profile of artistCategories" [value]="profile">{{profile}}</ion-select-option>
 					</ion-select>
@@ -31,6 +34,9 @@
 				<div fxLayout="column">
 					<h1 fxFlex>Creativos</h1>
 					<h2 fxFlex>Publica tus proyectos y descubre el trabajo de otros</h2>
+					<mat-form-field fxFlex>
+						<input matInput type="text" [(ngModel)]="username" placeholder="Username"/>
+					</mat-form-field>
 					<ion-select [(ngModel)]="selectedCreativeProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="onSelectCategories($event, 'creative')" multiple>
 						<ion-select-option *ngFor="let profile of creativeCategories" [value]="profile">{{profile}}</ion-select-option>
 					</ion-select>
@@ -56,6 +62,9 @@
 				<div fxLayout="column">
 					<h1 fxFlex>Influencers</h1>
 					<h2 fxFlex>Conecta y colabora con otros artistas cerca de ti</h2>
+					<mat-form-field fxFlex>
+						<input matInput type="text" [(ngModel)]="username" placeholder="Username"/>
+					</mat-form-field>
 					<ion-select [(ngModel)]="selectedInfluencerProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="onSelectCategories($event, 'influencer')" multiple>
 						<ion-select-option *ngFor="let profile of influencerCategories" [value]="profile">{{profile}}</ion-select-option>
 					</ion-select>
