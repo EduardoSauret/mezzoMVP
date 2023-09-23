@@ -1,4 +1,8 @@
 import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import { UserProfile, UserService } from 'src/app/user.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Subscription } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
 	selector: 'app-sound-profile',
@@ -7,16 +11,22 @@ import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 })
 export class SoundProfilePage implements AfterViewInit {
 
+	userProfile: UserProfile;
   bioData: {};
 	photos: any[];
 	videos: any[];
 	audios: any[];
   headerTitle = 'Username'
   headerMenu = true;
+	uid;
+	private userProfileSubscription: Subscription;
   
 
 	constructor(
 		// private popoverCtrl: PopoverController
+		private userService: UserService,
+		private afAuth: AngularFireAuth,
+		private firestore: AngularFirestore
 	) {
     this.bioData;
 		this.photos = [];
@@ -98,7 +108,7 @@ export class SoundProfilePage implements AfterViewInit {
     //BioData
     this.bioData = {
 			avatar: '../../assets/images/avatar-highost.png',
-			username: 'HiGhost',
+			username: 'TEST',
 			posts: '30',
 			followers: '1.2M',
 			following: '1200'
@@ -106,9 +116,32 @@ export class SoundProfilePage implements AfterViewInit {
 
 	}
 
+	ngOnInit(){
+		// working for registration
+		this.userProfile = this.userService.userProfile;
+		// working for login
+		this.userProfileSubscription = this.afAuth.authState.subscribe(user => {
+			if (user) {
+				this.uid = user.uid;
+				console.log('UID ' + this.uid)
+				this.userService.getUserProfile(this.uid).subscribe(profileData => {
+					this.userProfile = profileData;
+				})
+			}
+		});
+	}
+
+
 	ngAfterViewInit() {
 		// console.log('Super tabs is ', this.superTabs);
 		// this.superTabs.selectTab(1);
+	}
+
+
+	ngOnDestroy() {
+		if (this.userProfileSubscription) {
+			this.userProfileSubscription.unsubscribe();
+		}
 	}
 
 }

@@ -19,8 +19,13 @@
 		</div>
 	</div>
 	<div fxLayout="column" fxLayoutGap=".5rem" class="pad-t-10">
-		<h4 class="bold" fxFlex>{{bioData.username}}</h4>
-		<h4 class="mezzo-gray-text" fxFlex>Producer</h4>
+		<h4 class="bold" fxFlex>{{userProfile.username}}</h4>
+		<div fxFlex="">
+			<ng-container *ngFor="let category of userProfile.artist; let last = last">
+				<span class="mezzo-gray-text h4">{{category}}</span><span class="mezzo-gray-text h4" *ngIf="!last">, </span>
+			</ng-container>
+		</div>
+		<!-- <span class="mezzo-gray-text mezzo-inline-text" fxFlex>Producer</span> -->
 		<h4 fxFlex>I make beats and melodies for HipHop and Trap artists.</h4>
 	</div>
 </div>
