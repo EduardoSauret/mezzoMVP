@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ContentCreatorsProfilePage } from './content-creators-profile.page';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
 	{
@@ -19,7 +21,8 @@ const routes: Routes = [
 		CommonModule,
 		FormsModule,
 		IonicModule,
-		RouterModule.forChild(routes)
+		RouterModule.forChild(routes),
+		SharedModule
 	],
 	declarations: [ContentCreatorsProfilePage]
 })

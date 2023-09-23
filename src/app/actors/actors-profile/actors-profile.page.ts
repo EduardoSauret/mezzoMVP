@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Subscription } from 'rxjs';
+import { UserProfile } from 'src/app/shared/interfaces/user.interface';
+import { UserService } from 'src/app/user.service';
 
 @Component({
 	selector: 'app-actors-profile',
@@ -7,18 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorsProfilePage implements OnInit {
 
-
-
+	userProfile: UserProfile;
   bioData: {};
 	photos: any[];
 	videos: any[];
 	audios: any[];
   headerTitle = 'Username'
   headerMenu = true;
+	uid;
+	private userProfileSubscription: Subscription;
   
 
 	constructor(
 		// private popoverCtrl: PopoverController
+		private userService: UserService,
+		private afAuth: AngularFireAuth,
+		private firestore: AngularFirestore
 	) {
     this.bioData;
 		this.photos = [];
@@ -109,6 +118,24 @@ export class ActorsProfilePage implements OnInit {
 	}
 
 	ngOnInit() {
+		// working for registration
+		this.userProfile = this.userService.userProfile;
+		// working for login
+		this.userProfileSubscription = this.afAuth.authState.subscribe(user => {
+			if (user) {
+				this.uid = user.uid;
+				console.log('UID ' + this.uid)
+				this.userService.getUserProfile(this.uid).subscribe(profileData => {
+					this.userProfile = profileData;
+				})
+			}
+		});
+	}
+
+	ngOnDestroy() {
+		if (this.userProfileSubscription) {
+			this.userProfileSubscription.unsubscribe();
+		}
 	}
 
 }

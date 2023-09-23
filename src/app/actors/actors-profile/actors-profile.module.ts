@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { ActorsProfilePage } from './actors-profile.page';
 import { SharedModule } from '../../shared/shared.module';
 
+
 const routes: Routes = [
 	{
 		path: '',
