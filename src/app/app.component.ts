@@ -4,7 +4,8 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { MenuController } from '@ionic/angular'
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
 	selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
 		private splashScreen: SplashScreen,
 		private statusBar: StatusBar,
 		private router: Router,
-		private menu: MenuController
+		private menu: MenuController,
+		public fireAuth: AngularFireAuth
 	) {
 		this.initializeApp();
 		this.navLinks = [
@@ -41,5 +43,18 @@ export class AppComponent {
 	goTo(route: string) {
 		this.menu.close();
 		this.router.navigate([route]);
+	}
+
+	signOut() {
+		console.log('sign out clicked');
+		this.fireAuth.auth.signOut()
+		.then(() => {
+			console.log('user signed out succesfully');
+			this.menu.close();
+			this.router.navigate(['/login']);
+		})
+		.catch(error => {
+			console.log(error);
+		});
 	}
 }

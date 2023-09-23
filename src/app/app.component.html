@@ -8,10 +8,17 @@
 				</div>
 			</ion-toolbar>
 		</ion-header>
-		<ion-content class="ion-padding" fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="space-between center">
-			<ng-container *ngFor="let navLink of navLinks">
-				<h3 class="nav-link" (click)="goTo(navLink.routePath)">{{navLink.profileType}}</h3>
-			</ng-container>
+		<ion-content class="ion-padding">
+			<div class="height-100" fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="space-between start">
+				<div fxFlex="80">
+					<ng-container *ngFor="let navLink of navLinks">
+						<h3 class="nav-link" (click)="goTo(navLink.routePath)">{{navLink.profileType}}</h3>
+					</ng-container>
+				</div>
+				<div fxFlex="20">
+					<h4 class="mz-click" (click)="signOut()">Sign Out</h4>
+				</div>
+			</div>
 		</ion-content>
 	</ion-menu>
 	<div class="ion-page" id="main-content">

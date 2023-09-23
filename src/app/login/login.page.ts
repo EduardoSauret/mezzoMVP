@@ -22,7 +22,8 @@ export class LoginPage implements OnInit, OnDestroy {
 	constructor(public afAuth: AngularFireAuth, public userService: UserService, public router: Router) { }
 
 	ngOnInit() {
-		
+		this.username = '';
+		this.email = '';
 	}
 
 	onSubmit(){
