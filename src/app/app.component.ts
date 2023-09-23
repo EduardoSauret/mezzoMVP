@@ -24,9 +24,9 @@ export class AppComponent {
 	) {
 		this.initializeApp();
 		this.navLinks = [
-			{profileType: 'Content Creators', routePath: 'content-creators'},
-			{profileType: 'Sound Producers', routePath: 'sound/home'},
-			{profileType: 'Influencers', routePath: 'influencers'},
+			{profileType: 'Artists', routePath: 'artists/home'},
+			{profileType: 'Content Creators', routePath: 'creatives/home'},
+			{profileType: 'Influencers', routePath: 'influencers/home'},
 		];
 
 	}
