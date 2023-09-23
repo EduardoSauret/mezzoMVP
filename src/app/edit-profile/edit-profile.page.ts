@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { UserService } from '../user.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-edit-profile',
@@ -16,6 +17,7 @@ export class EditProfilePage implements OnInit, OnDestroy {
 	sub;
 	username: string;
 	profilePic: string;
+	uid;
 
 	password: string;
 	newpassword: string;
@@ -25,6 +27,8 @@ export class EditProfilePage implements OnInit, OnDestroy {
 	@ViewChild('fileBtn', { static: false }) fileBtn: {
 		nativeElement: HTMLInputElement
 	};
+	private userSubscription: Subscription;
+	userService: any;
 
 	constructor(
 		private http: Http,
@@ -32,7 +36,7 @@ export class EditProfilePage implements OnInit, OnDestroy {
 		private router: Router,
 		private alertController: AlertController,
 		private user: UserService) {
-		this.mainuser = afs.doc(`users/${user.getUID()}`);
+		this.mainuser = afs.doc(`users/${this.uid}`);
 		this.sub = this.mainuser.valueChanges().subscribe(event => {
 			this.username = event.username;
 			this.profilePic = event.profilePic;
@@ -40,6 +44,14 @@ export class EditProfilePage implements OnInit, OnDestroy {
 	}
 
 	ngOnInit() {
+		this.userSubscription = this.userService.getCurrentUser().subscribe(user => {
+			if (user) {
+				this.uid = user.uid;
+				// Use the uid as needed
+			} else {
+				// User is not logged in
+			}
+		});
 	}
 
 	ngOnDestroy() {

@@ -8,7 +8,7 @@
 				</div>
 			</ion-toolbar>
 		</ion-header>
-		<ion-content class="ion-padding" fxLayout="column" fxLayoutGap="1rem">
+		<ion-content class="ion-padding" fxLayout="column" fxLayoutGap="1rem" fxLayoutAlign="space-between center">
 			<ng-container *ngFor="let navLink of navLinks">
 				<h3 class="nav-link" (click)="goTo(navLink.routePath)">{{navLink.profileType}}</h3>
 			</ng-container>
