@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
-	<mezzo-header-toolbar [headerMenu]="headerMenu" [headerTitle]="'HiGhost'"></mezzo-header-toolbar>
-	<mezzo-bio [bioData]="bioData"></mezzo-bio>
+	<mezzo-header-toolbar [headerMenu]="headerMenu" [headerTitle]="userProfile.username"></mezzo-header-toolbar>
+	<mezzo-bio [userProfile]="userProfile" [bioData]="bioData"></mezzo-bio>
 </ion-header>
 
 <super-tabs>

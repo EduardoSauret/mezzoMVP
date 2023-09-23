@@ -11,7 +11,7 @@ export interface User {
 }
 
 export interface UserProfile {
-	uid: string;  // Firebase UID
+	uid?: string;  // Firebase UID
 	email?: string;
   username?: string;
   bio?: string;
@@ -24,6 +24,7 @@ export interface UserProfile {
 @Injectable()
 export class UserService {
 	private user: User;
+	userProfile: UserProfile;
 	profileType: string[];
 	user$: Observable<firebase.User>;
 
@@ -72,7 +73,8 @@ export class UserService {
 	}
 
 	getUID(): string {
-		return this.user.uid;
+		// return this.user.uid;
+		return this.userProfile.uid;
 	}
 
 	setProfileType(profileType: string[]){
@@ -83,18 +85,37 @@ export class UserService {
 		return this.profileType;
 	}
 
+	setUserProfile(userProfile: UserProfile){
+		const { uid: _, ...userData } = userProfile;
+		this.userProfile = userProfile;
+	}
+
 	addUserProfile(userProfile: UserProfile): Promise<void> {
 		const { uid, ...userData } = userProfile;  // Extract UID and other data
+		this.userProfile = userProfile;
 		return this.firestore.collection('userProfiles').doc(uid).set(userData);
 	}
 
 	updateUserProfile(uid: string, userProfile: UserProfile): Promise<void> {
 		const { uid: _, ...userData } = userProfile;
+		this.userProfile = userProfile;
 		return this.firestore.collection('userProfiles').doc(uid).update(userData);
 	}
 
   getUserProfile(uid: string): Observable<any> {
     return this.firestore.collection('userProfiles').doc(uid).valueChanges();
   }
+
+	// Function to retrieve the user profile from Firestore and set it in userProfile after Login succesfull
+	setUserProfileDataFromFirestore(userId: string): void {
+			this.firestore
+				.collection('userProfiles')
+				.doc(userId)
+				.valueChanges()
+				.subscribe((userProfile: any) => {
+					this.setUserProfile(userProfile);
+				});
+	}
+
 
 }

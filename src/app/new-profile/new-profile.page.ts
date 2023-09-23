@@ -1,14 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserProfile, UserService } from '../user.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-new-profile',
 	templateUrl: './new-profile.page.html',
 	styleUrls: ['./new-profile.page.scss'],
 })
-export class NewProfilePage implements OnInit {
+export class NewProfilePage implements OnInit, OnDestroy {
 
 	username;
 	shouldScroll;
@@ -19,6 +21,8 @@ export class NewProfilePage implements OnInit {
 	selectedArtistCategories: string[] = [];
 	selectedCreativeCategories: string[] = [];
 	selectedInfluencerCategories: string[] = [];
+	uid;
+	private userSubscription: Subscription;
 
 	slideOpts = {
 		initialSlide: 0,
@@ -32,9 +36,18 @@ export class NewProfilePage implements OnInit {
 	constructor(
 		private router: Router,
 		private userService: UserService,
-		private afstore: AngularFirestore) { }
+		private afstore: AngularFirestore,
+		private afAuth: AngularFireAuth,) { }
 
 	ngOnInit() {
+		this.userSubscription = this.userService.getCurrentUser().subscribe(user => {
+			if (user) {
+				this.uid = user.uid;
+				// Use the uid as needed
+			} else {
+				// User is not logged in
+			}
+		});
 	}
 
 	onSelectCategories(event, profileType: string){
@@ -50,9 +63,8 @@ export class NewProfilePage implements OnInit {
 	}
 	
 	saveProfile(profileType: string){
-		const userId = this.userService.getUID();
 		const userProfile: UserProfile = {
-			uid: userId,
+			uid: this.uid,
 			username: this.username,  // Initialize with empty string
 			profileType: profileType,
 		};
@@ -65,14 +77,21 @@ export class NewProfilePage implements OnInit {
 			userProfile.influencer = this.selectedInfluencerCategories;
 		}
 
-		this.userService.updateUserProfile(userId, userProfile)
+		this.userService.updateUserProfile(this.uid, userProfile)
 			.then(() => {
 				console.log('User profile saved:', userProfile);
+				this.userService.setUserProfile(userProfile);
 				this.router.navigate([`/${profileType}s`]);
 			})
 			.catch((error) => {
 				console.error('Error saving user profile:', error);
 			});
+	}
+
+	ngOnDestroy() {
+		if (this.userSubscription) {
+			this.userSubscription.unsubscribe();
+		}
 	}
 
 }

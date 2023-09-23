@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserProfile } from 'src/app/user.service';
 
 @Component({
   selector: 'mezzo-bio',
@@ -8,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BioComponent implements OnInit {
 
   @Input() bioData: any[];
+	@Input() userProfile: UserProfile;
 
   constructor() { }
 
