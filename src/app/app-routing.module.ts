@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthService } from './auth.service';
+// import { AuthService } from './auth.service';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 // Angular 8 new syntax
 // const routes: Routes = [
@@ -9,15 +10,15 @@ import { AuthService } from './auth.service';
 // ];
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'register', pathMatch: 'full' },
+	{ path: '', redirectTo: 'login', pathMatch: 'full' },
 	{ path: 'login', loadChildren: './login/login.module#LoginPageModule' },
 	{ path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-	{ path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthService] },
-	{ path: 'new-profile', loadChildren: './new-profile/new-profile.module#NewProfilePageModule', canActivate: [AuthService] },
-	{ path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
-	{ path: 'artists', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule'},
-	{ path: 'creatives', loadChildren: './content-creators/content-creators-tabs/content-creators-tabs.module#ContentCreatorsTabsPageModule' },
-	{ path: 'influencers', loadChildren: './actors/actors-tabs/actors-tabs.module#ActorsTabsPageModule' },
+	{ path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthGuard] },
+	{ path: 'new-profile', loadChildren: './new-profile/new-profile.module#NewProfilePageModule', canActivate: [AuthGuard] },
+	{ path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule', canActivate: [AuthGuard] },
+	{ path: 'artists', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthGuard] },
+	{ path: 'creatives', loadChildren: './content-creators/content-creators-tabs/content-creators-tabs.module#ContentCreatorsTabsPageModule', canActivate: [AuthGuard]  },
+	{ path: 'influencers', loadChildren: './actors/actors-tabs/actors-tabs.module#ActorsTabsPageModule', canActivate: [AuthGuard] },
 ];
 @NgModule({
 	imports: [

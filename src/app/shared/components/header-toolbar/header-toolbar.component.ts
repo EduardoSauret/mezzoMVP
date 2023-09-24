@@ -11,6 +11,7 @@ export class HeaderToolbarComponent implements OnInit {
 	@Input('headerSearch') headerSearch: boolean;
 	@Input('headerTitle') headerTitle: string;
 	@Input('headerFilter') headerFilter: boolean;
+	@Input('backButton') backButton: boolean;
 
   constructor() { }
 

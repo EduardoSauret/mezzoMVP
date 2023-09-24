@@ -3,6 +3,9 @@
 		<div fxFlex="48px" fxLayoutAlign="start center" *ngIf="headerMenu">
 			<ion-menu-button class="mezzo-indigo"></ion-menu-button>
 		</div>
+		<div fxFlex="48px" fxLayoutAlign="start center" *ngIf="backButton">
+			<ion-back-button class="mezzo-indigo"></ion-back-button>
+		</div>
 		<span fxFlex="grow"  class="mezzo-toolbar-title" fxLayoutAlign="center center">{{headerTitle}}</span>
 		<ion-icon fxFlex="24px" *ngIf="headerFilter" name="funnel" size="large" class="mar-r-18 mezzo-indigo"></ion-icon>
 		<ion-icon fxFlex="24px" *ngIf="headerSearch" name="search" size="large" class="mezzo-indigo"></ion-icon>
