@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UserProfile } from 'src/app/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mezzo-bio',
@@ -11,8 +12,12 @@ export class BioComponent implements OnInit {
   @Input() bioData: any[];
 	@Input() userProfile: UserProfile;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+	onEdit() {
+		this.router.navigate(['/edit-profile']);
+	}
 
 }
