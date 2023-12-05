@@ -30,8 +30,8 @@ export class NewProfilePage implements OnInit, OnDestroy {
 	};
 
 	artistCategories: any[] = ['Guitar', 'Singer', 'Bass', 'DJ', 'Drums', 'Music Producer'];
-	creativeCategories: any[] = ['Video', 'Photo', 'MUA', 'Illustration', 'Stylist', 'Art Director', 'Creative Director', 'Assistant'];
-	influencerCategories: any[] = ['Modelo', 'Actor', 'Youtuber', 'Deportista', 'Tiktoker', 'Instagram', 'Twitch'];
+	creativeCategories: any[] = ['AI Artist', 'Photo', 'Video', 'Illustration', 'Stylist', 'Art Director', 'Creative Director', 'MUA'];
+	influencerCategories: any[] = ['Youtube', 'Tiktok', 'Instagram', 'Twitch'];
 
 	constructor(
 		private router: Router,
@@ -55,7 +55,7 @@ export class NewProfilePage implements OnInit, OnDestroy {
 		
 		if(profileType === 'artist') {
 			this.selectedArtistCategories = selectedCategories;
-		} else if(profileType === 'creative') {
+		} else if(profileType === 'creator') {
 			this.selectedCreativeCategories = selectedCategories;
 		} else if(profileType === 'influencer') {
 			this.selectedInfluencerCategories = selectedCategories;
@@ -68,14 +68,16 @@ export class NewProfilePage implements OnInit, OnDestroy {
 			username: this.username,  // Initialize with empty string
 			profileType: profileType,
 		};
-		
-		if (profileType === 'artist' && this.selectedArtistCategories.length > 0) {
-			userProfile.artist = this.selectedArtistCategories;
-		} else if (profileType === 'creative' && this.selectedCreativeCategories.length > 0) {
-			userProfile.creative = this.selectedCreativeCategories;
-		} else if (profileType === 'influencer' && this.selectedInfluencerCategories.length > 0) {
-			userProfile.influencer = this.selectedInfluencerCategories;
-		}
+
+		userProfile.profileSubTypes = this.selectedArtistCategories;
+
+		// if (profileType === 'artist' && this.selectedArtistCategories.length > 0) {
+		// 	userProfile.artist = this.selectedArtistCategories;
+		// } else if (profileType === 'creator' && this.selectedCreativeCategories.length > 0) {
+		// 	userProfile.creator = this.selectedCreativeCategories;
+		// } else if (profileType === 'influencer' && this.selectedInfluencerCategories.length > 0) {
+		// 	userProfile.influencer = this.selectedInfluencerCategories;
+		// }
 
 		this.userService.updateUserProfile(this.uid, userProfile)
 			.then(() => {

@@ -23,17 +23,17 @@
 		<div fxFlex>
 			<h4>{{userProfile.profileType | titlecase}}</h4>
 			<ng-container *ngIf="userProfile.profileType === 'artist'">
-				<ng-container *ngFor="let category of userProfile.artist; let last = last">
+				<ng-container *ngFor="let category of userProfile.profileSubTypes; let last = last">
 					<span class="mezzo-gray-text h4">{{category}}</span><span class="mezzo-gray-text h4" *ngIf="!last">, </span>
 				</ng-container>
 			</ng-container>
-			<ng-container *ngIf="userProfile.profileType === 'creative'">
-				<ng-container *ngFor="let category of userProfile.creative; let last = last">
+			<ng-container *ngIf="userProfile.profileType === 'creator'">
+				<ng-container *ngFor="let category of userProfile.profileSubTypes; let last = last">
 					<span class="mezzo-gray-text h4">{{category}}</span><span class="mezzo-gray-text h4" *ngIf="!last">, </span>
 				</ng-container>
 			</ng-container>
 			<ng-container *ngIf="userProfile.profileType === 'influencer'">
-				<ng-container *ngFor="let category of userProfile.influencer; let last = last">
+				<ng-container *ngFor="let category of userProfile.profileSubTypes; let last = last">
 					<span class="mezzo-gray-text h4">{{category}}</span><span class="mezzo-gray-text h4" *ngIf="!last">, </span>
 				</ng-container>
 			</ng-container>

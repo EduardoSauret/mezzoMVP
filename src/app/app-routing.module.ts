@@ -17,7 +17,7 @@ const routes: Routes = [
 	{ path: 'new-profile', loadChildren: './new-profile/new-profile.module#NewProfilePageModule', canActivate: [AuthGuard] },
 	{ path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule', canActivate: [AuthGuard] },
 	{ path: 'artists', loadChildren: './sound/sound-tabs/sound-tabs.module#SoundTabsPageModule', canActivate: [AuthGuard] },
-	{ path: 'creatives', loadChildren: './content-creators/content-creators-tabs/content-creators-tabs.module#ContentCreatorsTabsPageModule', canActivate: [AuthGuard]  },
+	{ path: 'creators', loadChildren: './content-creators/content-creators-tabs/content-creators-tabs.module#ContentCreatorsTabsPageModule', canActivate: [AuthGuard]  },
 	{ path: 'influencers', loadChildren: './actors/actors-tabs/actors-tabs.module#ActorsTabsPageModule', canActivate: [AuthGuard] },
 ];
 @NgModule({

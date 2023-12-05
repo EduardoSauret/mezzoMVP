@@ -37,7 +37,7 @@
 					<mat-form-field fxFlex>
 						<input matInput type="text" [(ngModel)]="username" placeholder="Username"/>
 					</mat-form-field>
-					<ion-select [(ngModel)]="selectedCreativeProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="onSelectCategories($event, 'creative')" multiple>
+					<ion-select [(ngModel)]="selectedCreativeProfile" placeholder="Selecciona uno" interface="popover" (ionChange)="onSelectCategories($event, 'creator')" multiple>
 						<ion-select-option *ngFor="let profile of creativeCategories" [value]="profile">{{profile}}</ion-select-option>
 					</ion-select>
 				</div>
@@ -46,7 +46,7 @@
 				<div fxLayout="column" fxFill>
 					<div fxFlex fxLayoutAlign="center center">
 						<ion-button fxFlex expand="block" class="continue-btn" shape="round" color="dark"
-							(click)="saveProfile('creative')">
+							(click)="saveProfile('creator')">
 							COMENZAR
 						</ion-button>
 					</div>
