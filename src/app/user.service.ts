@@ -16,8 +16,9 @@ export interface UserProfile {
   username?: string;
   bio?: string;
 	profileType?: string;
+	profileSubTypes?: string[];
   artist?: string[];  // Array of artist data
-  creative?: string[];  // Array of creative data
+  creator?: string[];  // Array of creative data
   influencer?: string[];  // Array of influencer data
 }
 

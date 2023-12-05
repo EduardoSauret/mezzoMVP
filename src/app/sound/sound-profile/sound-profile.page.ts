@@ -123,7 +123,6 @@ export class SoundProfilePage implements AfterViewInit {
 		this.userProfileSubscription = this.afAuth.authState.subscribe(user => {
 			if (user) {
 				this.uid = user.uid;
-				console.log('UID ' + this.uid)
 				this.userService.getUserProfile(this.uid).subscribe(profileData => {
 					this.userProfile = profileData;
 				})

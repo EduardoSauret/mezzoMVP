@@ -8,6 +8,8 @@ import { Subscription } from 'rxjs';
 import { ProfileService } from '../services/profile.service';
 import { UserProfile } from '../shared/interfaces/user.interface';
 import { NavController } from '@ionic/angular';
+import { GlobalConstants } from '../shared/constants/global.constants';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
 	selector: 'app-edit-profile',
@@ -26,8 +28,14 @@ export class EditProfilePage implements OnInit, OnDestroy {
 	busy = false;
 	displayName: string;
 	private userSubscription: Subscription;
+	userProfileSubscription: Subscription;
 	user;
 	userProfile;
+	profileTypes: string[] = GlobalConstants.profileTypes;
+	selectedProfileType;
+	selectedProfileSubTypes;
+	profileSubTypes;
+	profileSelected: boolean = false;
 
 	@ViewChild('fileBtn', { static: false }) fileBtn: {
 		nativeElement: HTMLInputElement
@@ -37,6 +45,7 @@ export class EditProfilePage implements OnInit, OnDestroy {
 	constructor(
 		private http: Http,
 		private afs: AngularFirestore,
+		private afAuth: AngularFireAuth,
 		private router: Router,
 		private alertController: AlertController,
 		private userService: UserService,
@@ -54,23 +63,64 @@ export class EditProfilePage implements OnInit, OnDestroy {
 		this.userSubscription = this.profileService.getUser().subscribe(
 			(user) => {
 				this.user = user;
+				console.log(this.user);
 			},
 			(error) => {
 				console.log(error)
 			}
 		);
+	
+		this.userProfile = this.userService.userProfile;
+		// working for login
+		this.userProfileSubscription = this.afAuth.authState.subscribe(user => {
+			if (user) {
+				this.uid = user.uid;
+				this.userService.getUserProfile(this.uid).subscribe(profileData => {
+					this.userProfile = profileData;
+					this.username = this.userProfile.username;
+				})
+			}
+		});
+
+	}
+
+	onSelectProfileType(event){
+		this.selectedProfileType = event.detail.value;
+		if(event.detail.value === 'artist') {
+			this.profileSubTypes = GlobalConstants.profileArtistSubTypes;
+			this.profileSelected = true;
+		} else if (event.detail.value === 'creator') {
+			this.profileSubTypes = GlobalConstants.profileCreatorSubTypes;
+			this.profileSelected = true;
+		} else if (event.detail.value === 'influencer'){
+			this.profileSubTypes = GlobalConstants.profileInfluencerSubTypes;
+			this.profileSelected = true;
+		}
+	}
+
+	onSelectProfileSubType(event) {
+		const selectedCategories = event.detail.value;
+		if(this.selectedProfileType === 'artist') {
+			this.selectedProfileSubTypes = selectedCategories;
+		} else if(this.selectedProfileType === 'creator') {
+			this.selectedProfileSubTypes = selectedCategories;
+		} else if(this.selectedProfileType === 'influencer') {
+			this.selectedProfileSubTypes = selectedCategories;
+		}
 	}
 
 	updateProfile(){
-		// const user = this.profileService.getUser();
-		const userProfile: UserProfile = {
+		const userProfilePayload: UserProfile = {
 			uid: this.user.uid,
 			username: this.username,  // Initialize with empty string
+			profileType: this.selectedProfileType,
+			profileSubTypes: this.selectedProfileSubTypes
 		};
-		this.userService.updateUserProfile(this.user.uid, userProfile)
+
+		this.userService.updateUserProfile(this.user.uid, userProfilePayload)
 		.then(() => {
-			console.log('User profile saved:', userProfile);
-			this.userService.setUserProfile(userProfile);
+			console.log('User profile saved:', userProfilePayload);
+			this.userService.setUserProfile(userProfilePayload);
 			this.navCtrl.back();
 		})
 		.catch((error) => {
@@ -80,6 +130,7 @@ export class EditProfilePage implements OnInit, OnDestroy {
 
 	ngOnDestroy() {
 		this.userSubscription.unsubscribe();
+		this.userProfileSubscription.unsubscribe();
 	}
 	
 	// updateProfilePic() {

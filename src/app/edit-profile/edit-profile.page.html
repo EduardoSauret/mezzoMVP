@@ -13,20 +13,18 @@
 			<ion-img class="profile-pic" (click)="updateProfilePic()" src="https://ucarecdn.com/{{ profilePic }}/-/scale_crop/150x150/center/"></ion-img>
 		</div> -->
 
-		<div class="profile-info">
-			<ion-item class="mar-b-20">	
+		<div class="profile-info" fxLayout="column" fxLayoutGap="20px">
+			<ion-item>	
 				<ion-label position="floating">Username</ion-label>
-				<ion-input [(ngModel)]="username"></ion-input>
+				<ion-input [(ngModel)]="username" [placeholder]="userProfile.username"></ion-input>
 			</ion-item>
-			<!-- <ion-item>
-				<ion-label position="floating">New Password?</ion-label>
-				<ion-input [(ngModel)]="newpassword"></ion-input>
-			</ion-item>
-			<ion-item>
-				<ion-label position="floating">Enter old password</ion-label>
-				<ion-input [(ngModel)]="password"></ion-input>
-			</ion-item> -->
-			<ion-button fill="solid" expand="block" color="dark" (click)="updateProfile()">Save</ion-button>
+			<ion-select [(ngModel)]="selectedProfileType" placeholder="Selecciona una categoria" (ionChange)="onSelectProfileType($event)">
+				<ion-select-option *ngFor="let profile of profileTypes" [value]="profile">{{profile}}</ion-select-option>
+			</ion-select>
+			<ion-select *ngIf="profileSelected" [(ngModel)]="selectedProfileSubType" placeholder="Selecciona varias subcategorias" (ionChange)="onSelectProfileSubType($event)" multiple>
+				<ion-select-option *ngFor="let subType of profileSubTypes" [value]="subType">{{subType}}</ion-select-option>
+			</ion-select>
+			<ion-button fill="solid" expand="block" color="dark" (click)="updateProfile()" class="mar-t-20">Save</ion-button>
 		</div>
 	</div>
 
