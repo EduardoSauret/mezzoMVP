@@ -46,10 +46,8 @@ export class AppComponent {
 	}
 
 	signOut() {
-		console.log('sign out clicked');
 		this.fireAuth.auth.signOut()
 		.then(() => {
-			console.log('user signed out succesfully');
 			this.menu.close();
 			this.router.navigate(['/login']);
 		})

@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -44,7 +45,8 @@ import { CommonModule } from '@angular/common';
 		SuperTabsModule.forRoot(),
 		BrowserAnimationsModule,
 		MatInputModule,
-		MatFormFieldModule
+		MatFormFieldModule,
+		HttpClientModule
 	],
 	providers: [
 		StatusBar,
