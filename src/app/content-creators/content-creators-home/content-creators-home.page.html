@@ -3,14 +3,11 @@
 	</mezzo-header-toolbar>
 </ion-header>
 <ion-content>
-  <ng-container *ngFor="let postData of posts">
+	  <ng-container *ngFor="let post of data">
     <mezzo-post 
-      [avatar]="postData.avatar"
-      [thumbnail]="postData.thumbnail"
-      [name]="postData.name"
-      [profile]="postData.profile"
-      [distance]="postData.distance"
-      [title]="postData.title"
-      [description]="postData.description"></mezzo-post>
+			[avatar]="post.image.url"
+			[thumbnail]="post.image.thumbnailUrl"
+      [title]="post.title"
+      [description]="post.body"></mezzo-post>
   </ng-container>
 </ion-content>
