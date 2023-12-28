@@ -7,14 +7,15 @@ const routes: Routes = [
 		path: '',
 		component: ActorsTabsPage,
 		children: [
-			{ path: 'home', loadChildren: '../actors-home/actors-home.module#ActorsHomePageModule' },
-			{ path: 'upload', loadChildren: '../actors-upload/actors-upload.module#ActorsUploadPageModule' },
-			{ path: 'profile', loadChildren: '../actors-profile/actors-profile.module#ActorsProfilePageModule' },
-			{ path: 'post/:id', loadChildren: '../actors-post/actors-post.module#ActorsPostPageModule' },
-			{ path: 'edit-profile', loadChildren: '../actors-edit-profile/actors-edit-profile.module#ActorsEditProfilePageModule' },
+			{ path: 'home', loadChildren: () => import('../actors-home/actors-home.module').then(m => m.ActorsHomePageModule) },
+			{ path: 'upload', loadChildren: () => import('../actors-upload/actors-upload.module').then(m => m.ActorsUploadPageModule) },
+			{ path: 'profile', loadChildren: () => import('../actors-profile/actors-profile.module').then(m => m.ActorsProfilePageModule) },
+			{ path: 'post/:id', loadChildren: () => import('../actors-post/actors-post.module').then(m => m.ActorsPostPageModule) },
+			{ path: 'edit-profile', loadChildren: () => import('../actors-edit-profile/actors-edit-profile.module').then(m => m.ActorsEditProfilePageModule) },
 		]
 	}
 ];
+
 
 @NgModule({
 	imports: [RouterModule.forChild(routes)],
