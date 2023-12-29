@@ -26,6 +26,7 @@
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "^17.0.8",
     "@angular/platform-browser-dynamic": "^17.0.8",
+    "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.8",
     "@google-cloud/storage": "^3.5.0",
     "@ionic-native/core": "^5.16.0",
