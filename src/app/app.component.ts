@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular'
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
 	selector: 'app-root',
@@ -15,6 +15,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AppComponent {
 
 	navLinks: any[];
+	headerSearch = true;
 
 	constructor(
 		private platform: Platform,
@@ -45,14 +46,14 @@ export class AppComponent {
 		this.router.navigate([route]);
 	}
 
-	signOut() {
-		this.fireAuth.auth.signOut()
-		.then(() => {
-			this.menu.close();
-			this.router.navigate(['/login']);
-		})
-		.catch(error => {
-			console.log(error);
-		});
-	}
+	// signOut() {
+	// 	this.fireAuth.auth.signOut()
+	// 	.then(() => {
+	// 		this.menu.close();
+	// 		this.router.navigate(['/login']);
+	// 	})
+	// 	.catch(error => {
+	// 		console.log(error);
+	// 	});
+	// }
 }

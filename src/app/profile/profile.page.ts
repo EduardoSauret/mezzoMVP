@@ -1,12 +1,12 @@
 import { Component, ErrorHandler, OnDestroy } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { resolve } from 'url';
 import { reject } from 'q';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+// import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Button } from 'protractor';
 
 
@@ -56,7 +56,7 @@ export class ProfilePage implements OnDestroy {
 						// In case log out fails, an error is displayed
 						// in console
 						try {
-							this.afAuth.auth.signOut();
+							// this.afAuth.auth.signOut();
 							console.log('User was logged out succesfully from firebase!');
 							this.router.navigate(['/login']);
 						} catch (error) {
@@ -91,14 +91,14 @@ export class ProfilePage implements OnDestroy {
 				{
 					text: 'Delete Account',
 					handler: data => {
-						const usernameFireBase = this.afAuth.auth.currentUser.email;
-						if (usernameFireBase === data.Email) {
-							this.afAuth.auth.currentUser.delete();
-							this.router.navigate(['/login']);
-							console.log('Credentials are correct');
-						} else {
-							console.log('Wrong email!');
-						}
+						// const usernameFireBase = this.afAuth.auth.currentUser.email;
+						// if (usernameFireBase === data.Email) {
+						// 	// this.afAuth.auth.currentUser.delete();
+						// 	this.router.navigate(['/login']);
+						// 	console.log('Credentials are correct');
+						// } else {
+						// 	console.log('Wrong email!');
+						// }
 
 					}
 				}

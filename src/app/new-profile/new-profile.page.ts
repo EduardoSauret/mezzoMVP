@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserProfile, UserService } from '../user.service';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -40,14 +40,14 @@ export class NewProfilePage implements OnInit, OnDestroy {
 		private afAuth: AngularFireAuth,) { }
 
 	ngOnInit() {
-		this.userSubscription = this.userService.getCurrentUser().subscribe(user => {
-			if (user) {
-				this.uid = user.uid;
-				// Use the uid as needed
-			} else {
-				// User is not logged in
-			}
-		});
+		// this.userSubscription = this.userService.getCurrentUser().subscribe(user => {
+		// 	if (user) {
+		// 		this.uid = user.uid;
+		// 		// Use the uid as needed
+		// 	} else {
+		// 		// User is not logged in
+		// 	}
+		// });
 	}
 
 	onSelectCategories(event, profileType: string){

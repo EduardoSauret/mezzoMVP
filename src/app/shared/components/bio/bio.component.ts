@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BioComponent implements OnInit {
 
-  @Input() bioData: any[];
+  @Input() bioData;
 	@Input() userProfile: UserProfile;
 
   constructor(private router: Router) { }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Http } from '@angular/http';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { UserService } from '../user.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -9,7 +9,7 @@ import { ProfileService } from '../services/profile.service';
 import { UserProfile } from '../shared/interfaces/user.interface';
 import { NavController } from '@ionic/angular';
 import { GlobalConstants } from '../shared/constants/global.constants';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
 	selector: 'app-edit-profile',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { auth } from 'firebase/app';
 
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { User, UserProfile, UserService } from '../user.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -51,7 +51,7 @@ export class RegisterPage implements OnInit {
   }
 
 	registerUserWithEmail(email: string, password: string) {
-		this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+		this.afAuth.createUserWithEmailAndPassword(email, password)
 		.then((userCredential) => {
 			this.router.navigate(['/new-profile']);
       // Assume you have the user's UID obtained during registration/authentication
@@ -76,5 +76,9 @@ export class RegisterPage implements OnInit {
 			console.error('Error registering user:', error);
 		});
   }
+
+	login() {
+
+	}
 
 }

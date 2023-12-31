@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UserService } from '../../user.service';
-import { firestore } from 'firebase/app';
+// import { firestore } from 'firebase/app';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -78,9 +78,9 @@ export class SoundUploadPage implements OnInit {
 		const activeEffect = this.activeEffect;
 		const desc = this.desc;
 
-		this.afstore.doc(`users/${this.user.getUID()}`).update({
-			posts: firestore.FieldValue.arrayUnion(`${image}/${activeEffect}`)
-		});
+		// this.afstore.doc(`users/${this.user.getUID()}`).update({
+		// 	posts: firestore.FieldValue.arrayUnion(`${image}/${activeEffect}`)
+		// });
 
 		this.afstore.doc(`posts/${image}`).set({
 			desc,

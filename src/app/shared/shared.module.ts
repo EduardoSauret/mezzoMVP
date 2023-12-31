@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SuperTabsModule } from '@ionic-super-tabs/angular';
+// import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -31,7 +31,7 @@ import { BioComponent } from './components/bio/bio.component';
 		CommonModule,
 		IonicModule,
 		FlexLayoutModule,
-		SuperTabsModule,
+		// SuperTabsModule,
 		MatChipsModule,
 		MatInputModule,
 		MatFormFieldModule,
@@ -44,7 +44,7 @@ import { BioComponent } from './components/bio/bio.component';
 		PhotoListComponent,
 		VideoListComponent,
 		FlexLayoutModule,
-		SuperTabsModule,
+		// SuperTabsModule,
 		MatChipsModule,
 		HeaderToolbarComponent,
 		MatInputModule,

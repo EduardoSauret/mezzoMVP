@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+// import { auth } from 'firebase/app';
 import { UserProfile, UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -27,17 +27,17 @@ export class LoginPage implements OnInit, OnDestroy {
 	}
 
 	onSubmit(){
-		this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
-		.then((userCredential) => {
-			const userCredentials = userCredential.user;
-			this.userService.setUserProfileDataFromFirestore(userCredentials.uid);
-			this.userService.getUserProfile(userCredentials.uid);
-			this.getUserProfile(userCredentials.uid);
-    })
-    .catch(error => {
-			console.log('Login Error');
-      console.log(error);
-    });
+		// this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
+		// .then((userCredential) => {
+		// 	const userCredentials = userCredential.user;
+		// 	this.userService.setUserProfileDataFromFirestore(userCredentials.uid);
+		// 	this.userService.getUserProfile(userCredentials.uid);
+		// 	this.getUserProfile(userCredentials.uid);
+    // })
+    // .catch(error => {
+		// 	console.log('Login Error');
+    //   console.log(error);
+    // });
 	}
 
 

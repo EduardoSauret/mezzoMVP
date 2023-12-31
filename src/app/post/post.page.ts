@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { UserService } from '../user.service';
-import { firestore } from 'firebase/app';
+// import { firestore } from 'firebase/app';
 
 @Component({
 	selector: 'app-post',
@@ -40,16 +40,16 @@ export class PostPage implements OnInit, OnDestroy {
 		this.sub.unsubscribe();
 	}
 
-	toggleHeart() {
-		if (this.heartType === 'heart-empty') {
-			this.postReference.update({
-				likes: firestore.FieldValue.arrayUnion(this.user.getUID())
-			});
-		} else {
-			this.postReference.update({
-				likes: firestore.FieldValue.arrayRemove(this.user.getUID())
-			});
-		}
-	}
+	// toggleHeart() {
+	// 	if (this.heartType === 'heart-empty') {
+	// 		this.postReference.update({
+	// 			likes: firestore.FieldValue.arrayUnion(this.user.getUID())
+	// 		});
+	// 	} else {
+	// 		this.postReference.update({
+	// 			likes: firestore.FieldValue.arrayRemove(this.user.getUID())
+	// 		});
+	// 	}
+	// }
 
 }

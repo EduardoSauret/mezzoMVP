@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { first } from 'rxjs/operators';
-import { auth } from 'firebase/app';
+// import { auth } from 'firebase/app';
 import { Observable } from 'rxjs';
-import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentReference } from '@angular/fire/compat/firestore';
 
 export interface User {
 	username: string;
@@ -27,35 +27,35 @@ export class UserService {
 	private user: User;
 	userProfile: UserProfile;
 	profileType: string[];
-	user$: Observable<firebase.User>;
+	// user$: Observable<firebase.User>;
 
 	constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {
-		this.user$ = this.afAuth.authState;
+		// this.user$ = this.afAuth.authState;
 	}
 
 	setUser(user: User) {
 		this.user = user;
 	}
 
-	getCurrentUser(): Observable<firebase.User | null> {
-    return this.afAuth.authState;
-  }
+	// getCurrentUser(): Observable<firebase.User | null> {
+  //   return this.afAuth.authState;
+  // }
 
 	getUsername(): string {
 		return this.user.username;
 	}
 
-	reAuth(username: string, password: string) {
-		return this.afAuth.auth.currentUser.reauthenticateAndRetrieveDataWithCredential(auth.EmailAuthProvider.credential(username + '@luxilab.com', password));
-	}
+	// reAuth(username: string, password: string) {
+	// 	return this.afAuth.auth.currentUser.reauthenticateAndRetrieveDataWithCredential(auth.EmailAuthProvider.credential(username + '@luxilab.com', password));
+	// }
 
-	updatePassword(newpassword: string) {
-		return this.afAuth.auth.currentUser.updatePassword(newpassword);
-	}
+	// updatePassword(newpassword: string) {
+	// 	return this.afAuth.auth.currentUser.updatePassword(newpassword);
+	// }
 
-	updateEmail(newemail: string) {
-		return this.afAuth.auth.currentUser.updateEmail(newemail + '@luxilab.com');
-	}
+	// updateEmail(newemail: string) {
+	// 	return this.afAuth.auth.currentUser.updateEmail(newemail + '@luxilab.com');
+	// }
 
 	async isAuthenticated() {
 		if (this.user) { return true; }
